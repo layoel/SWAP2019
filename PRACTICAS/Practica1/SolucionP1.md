@@ -7,5 +7,5 @@
 - He clonado la maquina virtual m1
 - He editado el fichero **/etc/hostname** de la maquina clonada para llamarla m2
 - Desde el equipo anfitrión, he comprobado que accedo por SSH a la máquina que acabo de crear.
-![img] (https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica1/imagenes/1ssh.JPG)
+![img](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica1/imagenes/1ssh.JPG)
 - También he comprobado que puedo acceder a la web de ambos servidores.
