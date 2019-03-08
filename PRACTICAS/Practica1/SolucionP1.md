@@ -8,4 +8,7 @@
 - He editado el fichero **/etc/hostname** de la maquina clonada para llamarla m2
 - Desde el equipo anfitrión, he comprobado que accedo por SSH a la máquina que acabo de crear.
 ![img](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica1/imagenes/1ssh.JPG)
-- También he comprobado que puedo acceder a la web de ambos servidores.
+- También he comprobado que puedo acceder a la web de ambos servidores desde el anfitrion.
+![img](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica1/imagenes/2curl.JPG)
+
+###Ya están listas nuestras máquinas! :)
