@@ -1,6 +1,6 @@
 # PRACTICA 1: Instalación y configuración de máquinas virtuales
 
-- He creado una máquina virtual con el sistema operativo **ubuntu server 16.4**, usando el software de virtualización **VMWare**
+- He creado una máquina virtual con el sistema operativo **ubuntu server 16.4**, usando el software de virtualización **VMWare Workstation versión 10.0.0**
 - En la creación de la máquina, seleccioné el tipo de **conexion NAT** para que pudiera verse con mi ordenador anfitrión.
 - Durante la instalación del sistema operativo, seleccioné que se instalara **LAMP** y **openSSH**.
 - Tras la finalización de la instalación he creado un archivo en **/var/www/http** que se llama **ECAweb.html**
