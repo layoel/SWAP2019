@@ -63,7 +63,7 @@ Comprobamos que funciona:
 Para clonar carpetas entre las dos máquinas hemos seguido estos pasos:
 - hemos instalado rsync con el comando **sudo apt-get install rsync**
 - hemos generado un par de claves publica y privada para establecer la confianza entre servidores y poder automatizar tareas sin necesidad de introducir contraseñas.
-- hemos editado el archivo de configuración de *crontab* añadiendo la siguiente línea **linea en crontab**
+- hemos editado el archivo de configuración de *crontab* añadiendo la siguiente línea ** * * * * * ssh 192.168.80.131 rsync -avz -e ssh /var/www/ 192.168.80.132:/var/www/**
 	Lo que significa que nuestra máquina sincroniza los archivos de manera automática pasado el tiempo que le indiquemos en el archivo de configuración.
 
 Finalmente ya tenemos replicada la carpeta /var/www/http/ de **m1** en **m2**
