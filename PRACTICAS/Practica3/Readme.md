@@ -203,7 +203,7 @@ Percentage of the requests served within a certain time (ms)
 ~~
  -----------------------------------------------------------------------------
 // pound benchmark
-~~
+::console
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
@@ -248,15 +248,14 @@ Percentage of the requests served within a certain time (ms)
  100%   1143 (longest request)
 ~~
 A modo de resumen veamos una tabla comparativa de la ejecución del benchmark en los 3 balanceadores:
-|---------------|:-----------------------------------------------------------:|------------------|--------------------|
-|               | **Time**                                                    |                  |                    |
-|**Balanceador**|:-------------------------------------------------------------:|**Failed Request**|**Request per sec.**|
-|               |*Time taken for test*|*time per req. min.*|*time per req.max.*|                  |                    |
+
+
+|**Balanceador**|*Time taken for test*|*time per req. min.*|*time per req.max.*|**Failed Request**|**Request per sec.**|
 |:-------------:|:-------------------:|:------------------:|:-----------------:|:----------------:|:------------------:|
 |**NGINX**|98.521|0.985|98.521|0|1015.01|
 |**HAPROXY**|62.788|0.628|62.788|0|1592.66|
 |**POUND**|98.348|0.983|98.348|0|1016.79|
-|----------|----------|----------|----------|
+|----------|----------|----------|----------|----------|----------|
 
 Como podemos deducir de la tabla comparativa de los tres Balanceadores, si tuviera que implementarlo para una empresa que se dedique a servir páginas web yo elegiría Haproxy porque los resultados en tiempos/numero de peticiones son mucho mejores. Podemos ver que Nginx y Pound están muy igualados en tiempos de respuesta y numero de peticiones. Dado que la web que hemos servido es muy simple probablemente por eso el numero de fallos para los tres balanceadores es 0.
 
