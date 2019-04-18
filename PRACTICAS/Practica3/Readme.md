@@ -9,13 +9,13 @@ En esta máquina no hemos hecho como en las anteriores en la instalación unicam
 
 Vamos a instalar *nginx* escribiendo en consola:
 ```bash
-*elvira@LB:~$ **sudo apt-get install nginx***
+elvira@LB:~$ sudo apt-get install nginx
 ```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/2.JPG)
 
 Una vez instalado el servicio, lo iniciamos:
 ```bash
-*elvira@LB:~$ **sudo systemctl start nginx***
+elvira@LB:~$ sudo systemctl start nginx
 ```
 En el navegador podemos ver que el nginx está funcionando.
 
@@ -23,13 +23,13 @@ En el navegador podemos ver que el nginx está funcionando.
 
 A continuación, configuraremos nginx para ello modificamos el fichero de configuración que está en */etc/nginx/conf.d/default.conf*
 ```bash
-*elvira@LB:~$ **sudo nano /etc/nginx/conf.d/default.conf***
+elvira@LB:~$ sudo nano /etc/nginx/conf.d/default.conf
 ```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/3.JPG)
 
 Al editar este fichero, hemos configurado nuestro balanceador de carga con el algoritmo por turnos *round-robin* para que los cambios se apliquen, reiniciamos el servicio con:
 ```bash
-*elvira@LB:~$ **sudo service nginx restart***
+elvira@LB:~$ sudo service nginx restart
 ```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/5.JPG)
 
@@ -74,7 +74,7 @@ En este [enlace](http://www.maestrosdelweb.com/balance-de-carga-haproxy/) escrit
 
 Lo primero que hay que hacer es instalar el servicio. Para ello ejecutamos el comando:
 ```bash
-*elvira@LB2:~$ **sudo apt-get install haproxy***
+elvira@LB2:~$ sudo apt-get install haproxy
 ```
 Una vez instalado, tenemos que modificar el archivo de instalación para que el balanceador acepte conexiones entrantes por el puerto 80 y las reenvie a los dos servidores web **m1** y **m2** 
 
@@ -82,7 +82,7 @@ Una vez instalado, tenemos que modificar el archivo de instalación para que el 
 
 Ahora iniciamos el servicio haproxi con el comando.
 ```bash
-*elvira@LB2:~$ **sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg***
+elvira@LB2:~$ sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
 ```
 
 A continuación si no nos ha dado ningún fallo el iniciar el servicio ya podemos ejecutar el curl y veremos que haproxy está haciendo de balanceador entre m1 y m2 usa el balanceo por turnos.
@@ -108,15 +108,15 @@ Hay diversos tutoriales como [este](https://linuxtechlab.com/load-balancing-web-
 
 Primero instalamos el servicio con:
 ```bash
-*elvira@LB-POUND:~$**sudo apt-get install pound***
+elvira@LB-POUND:~$ sudo apt-get install pound
 ```
 Una vez instalado, al igual que en los casos anteriores, tenemos que editar el fichero de configuración del servicio *pound.cfg* situado en:
 ```bash
-*elvira@LB-POUND:~$**sudo nano /etc/pound/pound.cfg***
+elvira@LB-POUND:~$ sudo nano /etc/pound/pound.cfg
 ```
 el archivo de configuración original lo he copiado para no perderlo
 ```bash
-*elvira@LB-POUND:~$**sudo cp /etc/pound/pound.cfg /etc/pound/pound-copy.cfg***
+elvira@LB-POUND:~$ sudo cp /etc/pound/pound.cfg /etc/pound/pound-copy.cfg
 ```
 y a continuación he editado el fichero añadiendo las ip de los dos servidores web y la ip del balanceador y el puerto 80 que es donde escuchan peticiones.
 
@@ -141,18 +141,16 @@ Para poder lleva a cabo esta tarea, vamos a usar la herramienta *Apache Benchmar
 Para empezar, como dispongo de 3 maquinas con cada uno de los balanceadores, tengo que instalar la utilidad de apache benchmark en dos de ellos para probarla despues de para el servicio de balanceador en la maquina donde este ejecutando la herramienta de benchmark.
 
 ```bash
-*elvira@LB:~$**sudo apt-get install apache2-utils***
-*elvira@LB-POUND:~$**sudo apt-get install apache2-utils***
+elvira@LB:~$ sudo apt-get install apache2-utils
+elvira@LB-POUND:~$ sudo apt-get install apache2-utils
 ```
 Una vez instalado en uno de las maquinas por ejemplo en la que tengo instalado Pound, paro el servicio como vimos en el apartado anterior. Y ejecutamos el benchmark para nginx con la siguiente orden:
 
-```bash
-*elvira@LB-POUND:~$**sudo apt-get install apache2-utils***
-```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/23.JPG)
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/24.JPG)
 
 Salida haproxy
+
 ```console
 This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -246,6 +244,8 @@ Percentage of the requests served within a certain time (ms)
   99%    247
  100%   1095 (longest request)
  ```
+-------------------------------------------------------------------
+
 Salida Pound
 
 ```console
@@ -292,6 +292,7 @@ Percentage of the requests served within a certain time (ms)
   99%    151
  100%   1143 (longest request)
 ```
+-------------------------------------------------------------------
 
 A modo de resumen veamos una tabla comparativa de la ejecución del benchmark en los 3 balanceadores:
 
