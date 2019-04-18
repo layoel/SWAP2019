@@ -3,46 +3,46 @@
 ## NGINX Balanceo por turnos
 Inicialmente tenemos que crear una nueva maquina virtual con ubuntu server que hará las funciones de balanceador, este equipo se llama LB la  IP de mi balanceador es 192.168.80.133 está en red con las maquinas m1 y m2
 
-![imagen](1.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/1.JPG)
 
 En esta máquina no hemos hecho como en las anteriores en la instalación unicamente hemos marcado el servicio ssh y no hemos instalado LAMP para poder tener libre el puerto 80 que es el que se usará para el balanceo de carga.
 
 Vamos a instalar *nginx* escribiendo en consola:
 *elvira@LB:~$ **sudo apt-get install nginx***
-![imagen](2.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/2.JPG)
 Una vez instalado el servicio, lo iniciamos:
 *elvira@LB:~$ **sudo systemctl start nginx***
 En el navegador podemos ver que el nginx está funcionando.
-![imagen](4.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/4.JPG)
 
 A continuación, configuraremos nginx para ello modificamos el fichero de configuración que está en */etc/nginx/conf.d/default.conf*
 *elvira@LB:~$ **sudo nano /etc/nginx/conf.d/default.conf***
-![imagen](3.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/3.JPG)
 
 Al editar este fichero, hemos configurado nuestro balanceador de carga con el algoritmo por turnos *round-robin* para que los cambios se apliquen, reiniciamos el servicio con:
 *elvira@LB:~$ **sudo service nginx restart***
-![imagen](5.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/5.JPG)
 
 Si al hacer el curl desde otra máquina (dentro de la misma red) nos aparece la web principal de nginx en lugar de las webs de los servidores m1 y m2, tendremos que modificar el fichero *nginx.conf* comentando la línea donde dice **include /etc/nginx/sites-enabled**. La ruta del fichero es */etc/nginx/nginx.conf*
-![imagen](6.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/6.JPG)
 
 Una vez realizada la modificación anterior volveremos a reiniciar el servicio.
 
 Podemos comprobar con *curl 192.168.80.133* o bien escribiendo la ip del balanceador en nuestro navegador. Veremos que por turnos responde uno u otro servidor web. He desactivado la copia de la carpeta /var/www/http y editado el fichero index en ambos servidores para ver que servidor responde a la petición.
-![imagen](7.JPG)
-![imagen](8.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/7.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/8.JPG)
 
 ## NGINX Balanceo por ponderación
 Éste algoritmo lo usaremos cuando una de las máquinas sea más potente que la otra. Para ello en el archivo de configuración en la parte del upstream añadiremos el modificador **weight** con un número que será el que indicará la carga que asignamos a ese servidor web.
-![imagen](9.JPG)
-![imagen](10.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/9.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/10.JPG)
 Con esta modificación cargamos más un servidor que otro de peticiones pero nos interesa que las peticiones que vengan de la misma ip lleguen a la misma maquina servidora final. Para conseguir eso tenemos que balancear por IP y eso se hace modificando el archivo de configuración añadiendo la directiva **ip_hash**
-![imagen](11.JPG)
-![imagen](12.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/11.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/12.JPG)
 
 Podemos usar la directiva *keepalive* para que el tiempo de mantenimiento de la conexión sea el fijado por nosotros en el fichero de configuración, así evitaremos el problema que surge a los usuarios que están tras un proxy o un nat, para que no sean dirigidos siempre al mismo backend y se equilibre el balanceo.
-![imagen](13.JPG)
-![imagen](14.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/13.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/14.JPG)
 
 Con **ip_hash** podemos añadir junto al servidor la directiva *down* que lo pone como desconectado.
 Tambien la directiva *backup* pero sin **ip_hash** que hace que el servidor aparezca como respaldo y solo sirva peticiones en caso de que el resto de servidores estén caidos y ocupados.
@@ -56,18 +56,18 @@ Lo primero que hay que hacer es instalar el servicio. Para ello ejecutamos el co
 *elvira@LB2:~$ **sudo apt-get install haproxy***
 
 Una vez instalado, tenemos que modificar el archivo de instalación para que el balanceador acepte conexiones entrantes por el puerto 80 y las reenvie a los dos servidores web **m1** y **m2** 
-![imagen](15.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/15.JPG)
 
 Ahora iniciamos el servicio haproxi con el comando.
 *elvira@LB2:~$ **sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg***
 
 A continuación si no nos ha dado ningún fallo el iniciar el servicio ya podemos ejecutar el curl y veremos que haproxy está haciendo de balanceador entre m1 y m2 usa el balanceo por turnos.
-![imagen](16.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/16.JPG)
 ## HAPROXY Balanceo por ponderación
 Si queremos usar un algoritmo basado en ponderación debemos añadir en el fichero de configuración haproxy.cfg los pesos de las conexiones que va a soportar cada servidor.
-![imagen](17.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/17.JPG)
 Para que los cambios se apliquen debemos reiniciar el servicio de nuevo. Y comprobamos desde otra máquina como funciona este algoritmo de balanceo aplicado con haproxy.
-![imagen](18.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/18.JPG)
 
 ## POUND Balanceo por turnos
 
@@ -82,15 +82,15 @@ Una vez instalado, al igual que en los casos anteriores, tenemos que editar el f
 el archivo de configuración original lo he copiado para no perderlo
 *elvira@LB-POUND:~$**sudo cp /etc/pound/pound.cfg /etc/pound/pound-copy.cfg***
 y a continuación he editado el fichero añadiendo las ip de los dos servidores web y la ip del balanceador y el puerto 80 que es donde escuchan peticiones.
-![imagen](19.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/19.JPG)
 
 Como siempre, una vez editado el fichero de configuración reiniciaremos el servicio para que los cambios tengan efecto. Pero antes hay que tener en cuenta que hay que cambiar en **/etc/default/pound** la variable startup a 1
-![imagen](20.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/20.JPG)
 ahora si, reiniciamos el servicio.
-![imagen](21.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/21.JPG)
 
 Por último solo nos queda comprobar el balanceo por turnos con pound, podemos hacerlo como en los anteriores con curl.
-![imagen](22.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/22.JPG)
 
 ## Someter a una alta carga el servidor balanceado
 
@@ -104,8 +104,8 @@ Para empezar, como dispongo de 3 maquinas con cada uno de los balanceadores, ten
 Una vez instalado en uno de las maquinas por ejemplo en la que tengo instalado Pound, paro el servicio como vimos en el apartado anterior. Y ejecutamos el benchmark para nginx con la siguiente orden:
 
 *elvira@LB-POUND:~$**sudo apt-get install apache2-utils***
-![imagen](23.JPG)
-![imagen](24.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/23.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/24.JPG)
 
 // salida haproxy
 ~~
