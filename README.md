@@ -1,9 +1,9 @@
-|# EJERCICIOS DE SWAP 2019|
-|:------------------------:|
+# EJERCICIOS DE SWAP 2019
 
 # Tema1
 
-## Ejercicio 1.1 **Buscar información sobre las tareas o servicios web para los que se usan más los programas:**
+|Ejercicio 1.1 **Buscar información sobre las tareas o servicios web para los que se usan más los programas:**|
+|:--:|
 
 - **Apache**: La wikipedia define " Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.)" La web oficial de [Apache](https://httpd.apache.org/)podemos encontrar  toda la documentación necesaria para instalar y configurar un servidor con Apache. Si indagamos un poco por la red podemos ver que algunas empresas importantes que usan apache incluyen a Cisco, IBM, Salesforce, General Elecctric Adobe, VMWare, Xerox, Linkedln, Facebook, Hewlett-Packard, At & T, Siemens, Ebay y más.[fuente](https://kinsta.com/es/base-de-conocimiento/que-es-apache/). 
 
