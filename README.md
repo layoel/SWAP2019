@@ -42,7 +42,7 @@ Donde:
 
 - [Frameworks para desarrollo web con PHP](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
 
-	- [*Symfony 4*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*Symfony 4*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.
 	- [*Laravel*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
 	- [*CakePHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
 	- [*CodeIgniter*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
@@ -86,4 +86,14 @@ Donde:
 - [Monitorización de infraestructuras]((https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- Nagios
 	- Zabix
+
+## Ejercicio 2.4 **Ejercicio T2.4:
+- Buscar ejemplos de balanceadores software y hardware
+(productos comerciales).
+- Buscar productos comerciales para servidores de
+aplicaciones.
+- Buscar productos comerciales para servidores de
+almacenamiento.**
+
+
 ----------------------------------------------------------------------
