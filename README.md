@@ -64,4 +64,26 @@ Donde:
 	- [*Goggle Web Toolkit*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
 	- [*Grails*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
 
+## Ejercicio 2.3 **¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas. ...¡o recordar cómo usarlas!**
+
+- [Monitorización de servidor linux por consola](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
+	- top
+	- htop
+	- dstat
+	- ps
+	- lsof
+	- netsat
+	- route
+	- iptraf
+	- iftop
+	- df
+	- iotop
+
+- [Monitorización de un servidor Linux: Aplicaciones de interfaz web](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
+	- cacti
+	- munin
+	- collectd
+- [Monitorización de infraestructuras]((https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
+	- Nagios
+	- Zabix
 ----------------------------------------------------------------------
