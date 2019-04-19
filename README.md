@@ -14,9 +14,7 @@
 
 - **node.js**:La [web oficial de nodejs](https://nodejs.org/en/docs/guides/getting-started-guide/) nos dice que Node está diseñado para crear aplicaciones de red escalables. Nos permite manejar muchas conexiones al mismo tiempo. Una característica importante de Node es que no existen bloqueos porque casi ninguna funcion en Node se realiza sobre entrada/salida. Esto hace que sea el servidor web ideal cuando necesitamos escalabilidad. Node.js funciona en javascript, por lo que podemos usar este mismo lenguaje en el frontend y en el backend.
 
-----------------------------------------------------------------------------------------------------
-
-##Tema2
+#Tema2
 
 ##Ejercicio 2.1 **Calcular la disponibilidad del sistema si tenemos dos réplicas de cada elemento (en total 3 elementos en cada subsistema).**
 
@@ -41,4 +39,3 @@ Donde:
 ##Ejercicio 2.2 **Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2 [*https://github.com/Unitech/pm2* ](https://github.com/Unitech/pm2) que sirve para administrar clústeres de NodeJS.**
 
 
-----------------------------------------------------------------------------------------------
