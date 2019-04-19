@@ -1,36 +1,46 @@
 # Práctica 4: Asegurar la granja web
 
 ## Certificado SSL autofirmado (HTTPS)
-Inicialmente tenemos que crear una nueva maquina virtual con ubuntu server que hará las funciones de balanceador, este equipo se llama LB la  IP de mi balanceador es 192.168.80.133 está en red con las maquinas m1 y m2
 
+Para esta práctica usaré de nuevo los servidores web **m1**, **m2** y mi **LB** y añadiremos un nuevo servidor que será el que haga de **firewall**.
+
+Comenzamos trabajando sobre **m1**, esta máquina tiene la ip **192.168.80.131** y tiene apache instalado. Sobre él vamos a instalar un certificado autofirmado para poder configurar el acceso por *HTTPS*.
+
+Para generar el certificado ejecutamos la siguiente orden en la consola:
+```bash
+elvira@m1:~$ sudo a2enmod ssl
+```
+
+Reiniciamos el servicio de apache
+```bash
+elvira@:~m1$ sudo service apache2 restart
+```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/1.JPG)
 
-En esta máquina no hemos hecho como en las anteriores en la instalación unicamente hemos marcado el servicio ssh y no hemos instalado LAMP para poder tener libre el puerto 80 que es el que se usará para el balanceo de carga.
-
-Vamos a instalar *nginx* escribiendo en consola:
+Creamos una carpeta para guardar el certificado ssl  y lo generamos con **openssl**
 ```bash
-elvira@LB:~$ sudo apt-get install nginx
+elvira@m1:~$ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/apache2/ssl/apache.key -out /etc/apache2/ssl/apache.crt
 ```
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/2.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/2.JPG)
 
-Una vez instalado el servicio, lo iniciamos:
+Tenemos que editar el archivo de configuración:
 ```bash
-elvira@LB:~$ sudo systemctl start nginx
+elvira@:~m1$ sudo nano /etc/apache2/sites-avaliable/default-ssl
 ```
-En el navegador podemos ver que el nginx está funcionando.
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/3.JPG)
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/4.JPG)
+Reiniciamos el servicio apache y activamos el sitio default-ssl
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/4.JPG)
 
-A continuación, configuraremos nginx para ello modificamos el fichero de configuración que está en */etc/nginx/conf.d/default.conf*
-```bash
-elvira@LB:~$ sudo nano /etc/nginx/conf.d/default.conf
-```
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica3/imagenes/3.JPG)
+Ahora comprobamos que todo funciona correctamente haciendo peticiones por *HTTPS* al servidor.
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/5.JPG)
 
-Al editar este fichero, hemos configurado nuestro balanceador de carga con el algoritmo por turnos *round-robin* para que los cambios se apliquen, reiniciamos el servicio con:
-```bash
-elvira@LB:~$ sudo service nginx restart
-```
+
+
+
+
+
+
 
 
 
