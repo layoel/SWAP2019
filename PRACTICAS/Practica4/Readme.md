@@ -44,7 +44,7 @@ Ahora comprobamos que todo funciona correctamente haciendo peticiones por *HTTPS
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/5.JPG)
 
-Para configurar el servidor web**m2** copiaremos los certificados generados en **m1** a **m2**, yo he usado rsync pero tambien se puede hacer con scp.
+Para configurar el servidor web **m2** copiaremos los certificados generados en **m1** a **m2**, yo he usado rsync pero tambien se puede hacer con scp.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/7.JPG)
 
@@ -64,12 +64,9 @@ Reiniciamos el servicio
 ```bash
 elvira@:~m1$ sudo service nginx restart
 ```
+Ahora probamos que el balanceador con nginx sirve las web con https usando curl:
 
-
-
-
-
-
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/10.JPG)
 
 ## Cortafuegos
 
