@@ -40,26 +40,28 @@ Donde:
 
 ## Ejercicio 2.2 **Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2 [*https://github.com/Unitech/pm2* ](https://github.com/Unitech/pm2) que sirve para administrar clústeres de NodeJS.**
 
-- [Frameworks para desarrollo web](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
+- [Frameworks para desarrollo web con PHP](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
 
-	- *Symfony 4* :Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.
-
-	- *Laravel*
-	- *CakePHP*
-	- *CodeIgniter*
+	- [*Symfony 4*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*Laravel*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*CakePHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*CodeIgniter*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*Phalcon*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*Yii*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*FuelPHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
 - Frameworks para web con Python:
-	- [*Django*]()
-	- [*Pyramid*]()
-	- [*web2py*]()
-	- [*Flask*]()
-	- [*Bottle*]()
-	- [*web.py*]()
+	- [*Django*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
+	- [*Pyramid*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
+	- [*web2py*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
+	- [*Flask*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
+	- [*Bottle*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
+	- [*Tornado*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
 - [Frameworks para web con java](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
-	- *Spring MVC*:
-	- *Struts 2*:
-	- *Hibernate*:
-	- *Vaadin*
-	- *Goggle Web Toolkit*:
-	- *Grails*:
+	- [*Spring MVC*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
+	- [*Struts 2*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
+	- [*Hibernate*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
+	- [*Vaadin*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
+	- [*Goggle Web Toolkit*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
+	- [*Grails*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
 
 ----------------------------------------------------------------------
