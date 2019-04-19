@@ -1,6 +1,6 @@
 # EJERCICIOS DE SWAP 2019
 
-#Tema1
+##Tema1
 
 ##Ejercicio 1.1 **Buscar información sobre las tareas o servicios web para los que se usan más los programas:**
 
@@ -16,7 +16,7 @@
 
 ----------------------------------------------------------------------------------------------------
 
-#Tema2
+##Tema2
 
 ##Ejercicio 2.1 **Calcular la disponibilidad del sistema si tenemos dos réplicas de cada elemento (en total 3 elementos en cada subsistema).**
 
