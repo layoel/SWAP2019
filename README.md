@@ -4,7 +4,7 @@
 
 ## Ejercicio 1.1 **Buscar información sobre las tareas o servicios web para los que se usan más los programas:**
 
-- **Apache**: La wikipedia define " Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.)" La web oficial de [Apache](https://httpd.apache.org/)podemos encontrar  toda la documentación necesaria para instalar y configurar un servidor con Apache. Si indagamos un poco por la red podemos ver que algunas empresas importantes que usan apache incluyen a Cisco, IBM, Salesforce, General Elecctric Adobe, VMWare, Xerox, Linkedln, Facebook, Hewlett-Packard, At & T, Siemens, Ebay y más.[fuente](https://kinsta.com/es/base-de-conocimiento/que-es-apache/). 
+- **Apache**: La wikipedia define " Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.)" La web oficial de [Apache](https://httpd.apache.org/) podemos encontrar  toda la documentación necesaria para instalar y configurar un servidor con Apache. Si indagamos un poco por la red podemos ver que algunas empresas importantes que usan apache incluyen a Cisco, IBM, Salesforce, General Elecctric Adobe, VMWare, Xerox, Linkedln, Facebook, Hewlett-Packard, At & T, Siemens, Ebay y más.[fuente](https://kinsta.com/es/base-de-conocimiento/que-es-apache/). 
 
 - **Nginx**: También es un servidor web de código abierto, ahora también es usado como proxy inverso, caché de HTTP y balanceador de carga. La versión mas actual de Nginx es la 3.1 Mejora las funcionalidades de apache por ejemplo para sitios web estáticos o sitios web con alto tráfico. La web oficial de [nginx](https://www.nginx.com/). Originalmente fue creado por Igor Sysoev y apareció en público en octubre de 2004. Es una opción Opensource de alto rendimiento, muy ligera y flexible. Su característica principal es la asincronía. Nginx mejora el rendimiento de webs con respecto a Apache en cuanto a concurrencia, dado que es capaz de administrar más accesos concurentes de lo que lo podría hacer Apache y empleando menores requisitos de memoria.
 
@@ -40,5 +40,25 @@ Donde:
 
 ## Ejercicio 2.2 **Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2 [*https://github.com/Unitech/pm2* ](https://github.com/Unitech/pm2) que sirve para administrar clústeres de NodeJS.**
 
+- [Frameworks para desarrollo web](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
+~*Symfony 4* :Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.~
+
+*Laravel*
+*CakePHP*
+*CodeIgniter*
+Frameworks para web con Python:
+[*Django*]()
+[*Pyramid*]()
+[*web2py*]()
+[*Flask*]()
+[*Bottle*]()
+[*web.py*]()
+[Frameworks para web con java](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
+*Spring MVC*:
+*Struts 2*:
+*Hibernate*:
+*Vaadin*
+*Goggle Web Toolkit*:
+*Grails*:
 
 ----------------------------------------------------------------------
