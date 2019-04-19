@@ -41,24 +41,25 @@ Donde:
 ## Ejercicio 2.2 **Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2 [*https://github.com/Unitech/pm2* ](https://github.com/Unitech/pm2) que sirve para administrar clústeres de NodeJS.**
 
 - [Frameworks para desarrollo web](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
-~*Symfony 4* :Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.~
 
-*Laravel*
-*CakePHP*
-*CodeIgniter*
-Frameworks para web con Python:
-[*Django*]()
-[*Pyramid*]()
-[*web2py*]()
-[*Flask*]()
-[*Bottle*]()
-[*web.py*]()
-[Frameworks para web con java](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
-*Spring MVC*:
-*Struts 2*:
-*Hibernate*:
-*Vaadin*
-*Goggle Web Toolkit*:
-*Grails*:
+	- *Symfony 4* :Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.
+
+	- *Laravel*
+	- *CakePHP*
+	- *CodeIgniter*
+- Frameworks para web con Python:
+	- [*Django*]()
+	- [*Pyramid*]()
+	- [*web2py*]()
+	- [*Flask*]()
+	- [*Bottle*]()
+	- [*web.py*]()
+- [Frameworks para web con java](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
+	- *Spring MVC*:
+	- *Struts 2*:
+	- *Hibernate*:
+	- *Vaadin*
+	- *Goggle Web Toolkit*:
+	- *Grails*:
 
 ----------------------------------------------------------------------
