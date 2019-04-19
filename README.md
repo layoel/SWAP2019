@@ -87,13 +87,10 @@ Donde:
 	- Nagios
 	- Zabix
 
-## Ejercicio 2.4 **Ejercicio T2.4:
-- Buscar ejemplos de balanceadores software y hardware
-(productos comerciales).
-- Buscar productos comerciales para servidores de
-aplicaciones.
-- Buscar productos comerciales para servidores de
-almacenamiento.**
+## Ejercicio 2.4
+- **Buscar ejemplos de balanceadores software y hardware (productos comerciales).**
+- **Buscar productos comerciales para servidores de aplicaciones.**
+- **Buscar productos comerciales para servidores de almacenamiento.**
 
 
 ----------------------------------------------------------------------
