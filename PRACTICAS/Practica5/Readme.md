@@ -82,7 +82,6 @@ Query OK, 0 rows affected (0,06 sec)
 
 mysql> quit
 ```
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/3.JPG)
 
 Ahora usaremos **mysqldump** para hacer copia de los datos.
 ```bash
@@ -183,7 +182,7 @@ elvira@m2:~$
 Para poder restaurar la BD en **m2** tendremos que crear primero la base de datos:
 
 ```BASH
-mysql -u root -p
+elvira@m2:~$ mysql -u root -p
 .......
 mysql> create database `mascotas`;
 Query OK, 1 row affected (0,08 sec)
@@ -197,8 +196,39 @@ A continuación, restauramos los datos de la BD que están en el script sql que 
 
 ## Replicación mediante configuración maestro-esclavo
 
+Para realizar la copia de manera automática, usaremos el demonio de MySQL, que copia los datos desde un servidor llamado maestro a otro llamado esclavo.
+
+- Empezamos por la configuración del **servidor maestro** que en mi caso será **m1**.
+Necesitamos editar el archivo de configuración de MySQL
+
+```BASH
+elvira@m1:~$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+
+Tenemos que comentar de ese fichero la linea siguiente para que escuche a un servidor.
+
+```BASH
+# bind-address           = 127.0.0.1
+```
+
+Y habilitar las lineas siguientes que son las que dicen donde se almacenara el log de errores, el identificador del servidor y donde está el registro binario que tiene toda la información disponible sobre la base de datos.
+
+```BASH
+log_error = /var/log/mysql/error.log
+server-id               = 1
+log_bin                 = /var/log/mysql/mysql-bin.log
+```
+Para que los cambios que hemos realizado se apliquen, tenemos que reiniciar el servicio.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/6.JPG)
+
+- Configuración del esclavo 
+
+
 
 ## Configuración maestro-maestro
+
+
 
 
 En este [enlace](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx) Seleccionando nuestro balanceador y el sistema operativo sobre el que trabajamos, nos facilita una guia de instalación de certbot. Pero no tengo un dominio para poder hacer este ejercicio opcional.
