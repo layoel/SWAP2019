@@ -109,6 +109,7 @@ elvira@:~m1$ sudo iptables -P FORWARD DROP
 elvira@:~m1$ sudo iptables -P OUTPUT ACCEPT
 elvira@:~m1$ sudo iptables -A -m state --state NEW, ESTABLISHED -j ACCEPT
 ```
+En [esta web](http://www.seavtec.com/en/content/soporte/documentacion/iptables-howto-ejemplos-de-iptables-para-sysadmins) tenemos unos cuantos ejemplos para sysadmins de como configurar iptables.
 
 Creamos un script con todas las reglas que necesitamos para proteger nuestro servidor. Inicialmente vamos a bloquear cualquier tipo de trafico, a continuación permitiremos cualquier acceso desde la interfaz lo, y como nuestro equipo es un servidor web, vamos a permitir el acceso al puerto 80 y al 443 y por último permitimos acceso ssh al servidor solo desde la ip 192.168.80.132.
 
@@ -117,8 +118,17 @@ Creamos un script con todas las reglas que necesitamos para proteger nuestro ser
 Ejecución script iptables en m1
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/14.JPG)
 
+Comprobamos que podemos conectar por SSH solo desde la ip que indicamos.
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/16.JPG)
+
+Y también comprobamos que podemos acceder a la web por el puerto 80 y el 443
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/17.JPG)
+
+Ahora lo añadimos para que se ejecute al inicio cuando encendamos el equipo. Se puede hacer de dos formas, una añadiendolo en el fichero **crontab** con la directiva **@reboot /home/elvira/reglas_cortafuegos.sh** o bien aladiendolo al fichero **/etc/rc.local**
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/18.JPG)
 
 ## Certbot 
 
-En este [enlace](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx) Seleccionando nuestro balanceador y el sistema operativo sobre el que trabajamos, nos facilita una guia de instalación de certbot.
+En este [enlace](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx) Seleccionando nuestro balanceador y el sistema operativo sobre el que trabajamos, nos facilita una guia de instalación de certbot. Pero no tengo un dominio para poder hacer este ejercicio opcional.
 
