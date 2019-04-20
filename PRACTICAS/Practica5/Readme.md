@@ -226,8 +226,73 @@ Para que los cambios que hemos realizado se apliquen, tenemos que reiniciar el s
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/6.JPG)
 
-### Configuración del esclavo 
+### Configuración del servidor esclavo  **m2**
 
+Debemos editar el archivo de configuración con los mismos parámetros que para el maestro, con la diferencia del **server-id = 1** que en este caso, para el esclavo debe ser **server-id = 2**
+
+```BASH
+elvira@m2:~$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
+[sudo] password for elvira:
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/9.JPG)
+
+Y reiniciamos el servicio.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/10.JPG)
+
+
+Una vez configurados el maestro y el esclavo, volvemos al servidor maestro para crear un usuario y darle permisos para que haga la replicación.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/11.JPG)
+
+Mostramos los datos del maestro, que los vamos a necesitar en la máquina esclava con la siguiente orden en la consola mysql.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/12.JPG)
+
+La siguiente sentencia la ejecutamos desde el enotorno mysql de la máquina esclava.
+
+```BASH
+elvira@m2:~$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.25-0ubuntu0.16.04.2-log (Ubuntu)
+
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> change master to master_host='192.168.80.131', master_user='esclavo', master_password='esclavo', master_log_file='mysql-bin.000001', master_log_pos=501, master_port=3306;
+Query OK, 0 rows affected, 2 warnings (0,04 sec)
+
+mysql> start slave;
+Query OK, 0 rows affected (0,03 sec)
+
+```
+
+Desbloqueamos las tablas de la bd en el maestro:
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/14.JPG)
+
+Probamos que se replica la bd del maestro al esclavo, añadiendo en el maestro (m1) un nuevo dato a la tabla.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/13.JPG)
+
+consultamos si se ha replicado en el esclavo, con la orden
+
+```BASH
+elvira@m2:~$ mysql -u root -p
+...
+mysql> show slave status\G
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/15.JPG)
+Si tenemos el fallo que aparece en la imagen anterior, podemos solucionarlo de la [siguiente manera](https://www.beehexa.com/blog/2017/12/17/how-to-fix-master-and-slave-have-equal-mysql-server-uuids-mysql-error/)
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/16.JPG)
 
 
 ## Configuración maestro-maestro
