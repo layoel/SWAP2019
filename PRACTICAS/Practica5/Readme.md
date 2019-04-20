@@ -210,6 +210,7 @@ Tenemos que comentar de ese fichero la linea siguiente para que escuche a un ser
 ```BASH
 # bind-address           = 127.0.0.1
 ```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/8.JPG)
 
 Y habilitar las lineas siguientes que son las que dicen donde se almacenara el log de errores, el identificador del servidor y donde está el registro binario que tiene toda la información disponible sobre la base de datos.
 
@@ -218,6 +219,9 @@ log_error = /var/log/mysql/error.log
 server-id               = 1
 log_bin                 = /var/log/mysql/mysql-bin.log
 ```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/7.JPG)
+
 Para que los cambios que hemos realizado se apliquen, tenemos que reiniciar el servicio.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/6.JPG)
