@@ -198,7 +198,7 @@ A continuación, restauramos los datos de la BD que están en el script sql que 
 
 Para realizar la copia de manera automática, usaremos el demonio de MySQL, que copia los datos desde un servidor llamado maestro a otro llamado esclavo.
 
-- Empezamos por la configuración del **servidor maestro** que en mi caso será **m1**.
+### Empezamos por la configuración del **servidor maestro** que en mi caso será **m1**.
 Necesitamos editar el archivo de configuración de MySQL
 
 ```BASH
@@ -222,7 +222,7 @@ Para que los cambios que hemos realizado se apliquen, tenemos que reiniciar el s
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/6.JPG)
 
-- Configuración del esclavo 
+### Configuración del esclavo 
 
 
 
