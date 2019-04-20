@@ -2,7 +2,7 @@
 
 ## Certificado SSL autofirmado (HTTPS)
 
-Para esta práctica usaré de nuevo los servidores web **m1**, **m2** y mi **LB** y añadiremos un nuevo servidor que será el que haga de **firewall**.
+Para esta práctica usaré de nuevo los servidores web **m1** (192.168.80.131), **m2** (192.168.80.132) y mi **LB** (192.168.80.133).
 
 Comenzamos trabajando sobre **m1**, esta máquina tiene la ip **192.168.80.131** y tiene apache instalado. Sobre él vamos a instalar un certificado autofirmado para poder configurar el acceso por *HTTPS*.
 
@@ -70,8 +70,52 @@ Ahora probamos que el balanceador con nginx sirve las web con https usando curl:
 
 ## Cortafuegos
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/9.JPG)
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/10.JPG)
+Vamos a configurar iptables en el servidor **m1** con la ip 192.168.80.131. La información sobre el uso de iptables la podemos encontrar en el **man iptables** o bien ejecutando:
+```bash
+elvira@:~m1$ iptables -h
+```
+Comenzaremos comprobando el estado del cortafuegos.
+```bash
+elvira@:~m1$ sudo iptables -L -n -v 
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/11.JPG)
+
+Como aún no tengo definida ninguna regla en mi cortafuegos, vemos que acepta todo el tráfico. Ahora vamos a empezar con la configuración, primero **bloqueando todo el tráfico**.
+
+```bash
+elvira@:~m1$ sudo iptables -P INPUT DROP 
+elvira@:~m1$ sudo iptables -P OUTPUT DROP
+elvira@:~m1$ sudo iptables -P FORWARD DROP
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/12.JPG)
+
+Para aceptar todo y volver a la politica por defecto de aceptar todo añadimos las siguientes reglas de iptables:
+```bash
+elvira@:~m1$ iptables -F
+elvira@:~m1$ iptables -X
+elvira@:~m1$ iptables -Z
+elvira@:~m1$ iptables -t nat -F
+elvira@:~m1$ iptables −P INPUT ACCEPT
+elvira@:~m1$ iptables −P OUTPUT ACCEPT
+elvira@:~m1$ iptables −P FORWARD ACCEPT
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/13.JPG)
+
+Si solo queremos **bloquear el tráfico de entrada** añadiremos las siguientes ordenes a iptables.
+
+```bash
+elvira@:~m1$ sudo iptables -P INPUT DROP 
+elvira@:~m1$ sudo iptables -P FORWARD DROP
+elvira@:~m1$ sudo iptables -P OUTPUT ACCEPT
+elvira@:~m1$ sudo iptables -A -m state --state NEW, ESTABLISHED -j ACCEPT
+```
+
+Creamos un script con todas las reglas que necesitamos para proteger nuestro servidor. Inicialmente vamos a bloquear cualquier tipo de trafico, a continuación permitiremos cualquier acceso desde la interfaz lo, y como nuestro equipo es un servidor web, vamos a permitir el acceso al puerto 80 y al 443 y por último permitimos acceso ssh al servidor solo desde la ip 192.168.80.132.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/15.JPG)
+
+Ejecución script iptables en m1
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/14.JPG)
 
 
 ## Certbot 
