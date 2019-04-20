@@ -128,6 +128,8 @@ Ahora lo añadimos para que se ejecute al inicio cuando encendamos el equipo. Se
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/18.JPG)
 
+Por último reiniciamos el equipo para ver que se aplica el script que hemos añadido y hacemos peticiones h*ttps* al *balanceador* para ver que sirve tanto las de *m1* como las de *m2* (aunque en esta ocasión solo tenemos el script ejecutandose en *m1*)
+
 ## Certbot 
 
 En este [enlace](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx) Seleccionando nuestro balanceador y el sistema operativo sobre el que trabajamos, nos facilita una guia de instalación de certbot. Pero no tengo un dominio para poder hacer este ejercicio opcional.
