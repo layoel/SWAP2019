@@ -217,7 +217,7 @@ Y habilitar las lineas siguientes que son las que dicen donde se almacenara el l
 ```BASH
 log_error = /var/log/mysql/error.log
 server-id               = 1
-log_bin                 = /var/log/mysql/ bin.log  #mysql-bin.log
+log_bin                 = /var/log/mysql/ bin.log 
 ```
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/7.JPG)
