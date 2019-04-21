@@ -21,7 +21,7 @@ Pero para copiar bases de datos hay otras formas de hacerlo, lo veremos a contin
 Vamos a crear una base de datos imaginando que se trata de un veterinario, por lo que necesitamos una tabla llamada DatosMascotas con las columnas IDM, DNID, NombreD, NombreM, Especie y FechaNacimiento.
 
 ```bash
-elvira@m1:~$ mysql -uroot -p
+elvira@m1:~$ mysql -u root -p
 Enter password:
 Welcome to the MySQL monitor.  Commands end with ; or \g.
 Your MySQL connection id is 3
@@ -50,13 +50,13 @@ Query OK, 0 rows affected (0,49 sec)
 Una vez hemos creado nuestra base de datos para la clínica veterinaria y hemos creado la tabla, tenemos que introducir los datos de los animalitos que se tratan en la clínica junto con los datos de sus dueños.
 
 ```bash
-mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("1", "123456789A", "Elvira Castillo", "Euler", "Agaporni Personata", "14122018");
+mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("1", "12345678A", "Elvira Castillo", "Euler", "Agaporni Personata", "14122018");
 Query OK, 1 row affected (0,05 sec)
-mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("2", "123456789A", "Elvira Castillo", "Oli", "Agaporni Fisher", "01022019");
+mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("2", "12345678A", "Elvira Castillo", "Oli", "Agaporni Fisher", "01022019");
 Query OK, 1 row affected (0,02 sec)
-mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("3", "456789554D", "Maria Pereira", "Pluma", "Agaporni Fisher", "15052014");
+mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("3", "45678954D", "Maria Pereira", "Pluma", "Agaporni Fisher", "15052014");
 Query OK, 1 row affected (0,00 sec)
-mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("4", "547885444D", "Jose Lizana", "Peque", "Dogo Aleman", "04082000");
+mysql> insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("4", "54785444D", "Jose Lizana", "Peque", "Dogo Aleman", "04082000");
 Query OK, 1 row affected (0,00 sec)
 
 ```
@@ -217,7 +217,7 @@ Y habilitar las lineas siguientes que son las que dicen donde se almacenara el l
 ```BASH
 log_error = /var/log/mysql/error.log
 server-id               = 1
-log_bin                 = /var/log/mysql/mysql-bin.log
+log_bin                 = /var/log/mysql/ bin.log  #mysql-bin.log
 ```
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/7.JPG)
@@ -242,7 +242,36 @@ Y reiniciamos el servicio.
 
 
 Una vez configurados el maestro y el esclavo, volvemos al servidor maestro para crear un usuario y darle permisos para que haga la replicación.
+```BASH
+elvira@m1:~$ mysql -u root -p
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 3
+Server version: 5.7.25-0ubuntu0.16.04.2-log (Ubuntu)
 
+Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create user esclavo identified by 'esclavo';
+Query OK, 0 rows affected (0,02 sec)
+
+mysql> grant replication slave on *.* to 'esclavo'@'%' identified by 'esclavo';
+Query OK, 0 rows affected, 1 warning (0,01 sec)
+
+mysql> flush privileges;
+Query OK, 0 rows affected (0,00 sec)
+
+mysql> flush tables;
+Query OK, 0 rows affected (0,00 sec)
+
+mysql> flush tables with read lock;
+Query OK, 0 rows affected (0,00 sec)
+```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/11.JPG)
 
 Mostramos los datos del maestro, que los vamos a necesitar en la máquina esclava con la siguiente orden en la consola mysql.
@@ -266,7 +295,7 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql> change master to master_host='192.168.80.131', master_user='esclavo', master_password='esclavo', master_log_file='mysql-bin.000001', master_log_pos=501, master_port=3306;
+mysql> change master to master_host='192.168.80.131', master_user='esclavo', master_password='esclavo', master_log_file='bin.000001', master_log_pos=980, master_port=3306;
 Query OK, 0 rows affected, 2 warnings (0,04 sec)
 
 mysql> start slave;
@@ -288,12 +317,74 @@ consultamos si se ha replicado en el esclavo, con la orden
 elvira@m2:~$ mysql -u root -p
 ...
 mysql> show slave status\G
+
+*************************** 1. row ***************************
+               Slave_IO_State: Waiting for master to send event
+                  Master_Host: 192.168.80.131
+                  Master_User: esclavo
+                  Master_Port: 3306
+                Connect_Retry: 60
+              Master_Log_File: bin.000001
+          Read_Master_Log_Pos: 1314
+               Relay_Log_File: m2-relay-bin.000002
+                Relay_Log_Pos: 648
+        Relay_Master_Log_File: bin.000001
+             Slave_IO_Running: Yes
+            Slave_SQL_Running: Yes
+              Replicate_Do_DB:
+          Replicate_Ignore_DB:
+           Replicate_Do_Table:
+       Replicate_Ignore_Table:
+      Replicate_Wild_Do_Table:
+  Replicate_Wild_Ignore_Table:
+                   Last_Errno: 0
+                   Last_Error:
+                 Skip_Counter: 0
+          Exec_Master_Log_Pos: 1314
+              Relay_Log_Space: 852
+              Until_Condition: None
+               Until_Log_File:
+                Until_Log_Pos: 0
+           Master_SSL_Allowed: No
+           Master_SSL_CA_File:
+           Master_SSL_CA_Path:
+              Master_SSL_Cert:
+            Master_SSL_Cipher:
+               Master_SSL_Key:
+        Seconds_Behind_Master: 0
+Master_SSL_Verify_Server_Cert: No
+                Last_IO_Errno: 0
+                Last_IO_Error:
+               Last_SQL_Errno: 0
+               Last_SQL_Error:
+  Replicate_Ignore_Server_Ids:
+             Master_Server_Id: 1
+                  Master_UUID: b0c6959a-41cb-11e9-8ecc-000c297b19c0
+             Master_Info_File: /var/lib/mysql/master.info
+                    SQL_Delay: 0
+          SQL_Remaining_Delay: NULL
+      Slave_SQL_Running_State: Slave has read all relay log; waiting for more updates
+           Master_Retry_Count: 86400
+                  Master_Bind:
+      Last_IO_Error_Timestamp:
+     Last_SQL_Error_Timestamp:
+               Master_SSL_Crl:
+           Master_SSL_Crlpath:
+           Retrieved_Gtid_Set:
+            Executed_Gtid_Set:
+                Auto_Position: 0
+         Replicate_Rewrite_DB:
+                 Channel_Name:
+           Master_TLS_Version:
+1 row in set (0,00 sec)
 ```
+Realizando esta práctica en la versión inicial me encontré que al llegar aquí, tenía este fallo:
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/15.JPG)
-Si tenemos el fallo que aparece en la imagen anterior, podemos solucionarlo de la [siguiente manera](https://www.beehexa.com/blog/2017/12/17/how-to-fix-master-and-slave-have-equal-mysql-server-uuids-mysql-error/)
+El fallo de la imagen anterior es debido a que cuando cree las máquinas la cloné para seguir con el resto de prácticas y tiene el mismo id en mysql he encontrado [aquí](https://www.beehexa.com/blog/2017/12/17/how-to-fix-master-and-slave-have-equal-mysql-server-uuids-mysql-error/) la solución al problema.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/16.JPG)
 
+Una vez resueltos todos los problemas y habiendo comprobado que funciona la replicación de los datos, ya solo nos queda seguir introduciendo datos en el maestro, y automaticamente se replican en el esclavo.
 
 ## Configuración maestro-maestro
 
