@@ -478,6 +478,6 @@ Query OK, 0 rows affected (0,06 sec)
 
 Una vez hecho esto, ya tenemos nuestros servidores como maestro-maestro. vamos a probarlos por ejemplo añadiendo un registro en la tabla DatosMascotas de m1 a ver si aparece en m2. Y a continuacion en m2 insertamos otro dato en la tabla y comprobamos que automaticamente está en m1.
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/28.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/29.JPG)
 
 Como podemos ver en la imagen anterior, ya tenemos perfectamente configurados nuestos dos servidores como maestro-maestro.
