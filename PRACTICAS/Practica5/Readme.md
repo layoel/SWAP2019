@@ -40,13 +40,13 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 mysql> create database mascotas;
 Query OK, 1 row affected (0,05 sec)
 
-mysql> use mascotas
+mysql> 
 Database changed
 mysql> show tables
     -> ;
 Empty set (0,00 sec)
 
-mysql> create table DatosMascotas(IDM int, DNID varchar(9), NombreD varchar(100), NombreM varchar(100), Especie varchar(100), FechaNacimiento varchar(10));
+mysql> create table DatosMascotas(IDM int, DNID varchar(10), NombreD varchar(100), NombreM varchar(100), Especie varchar(100), FechaNacimiento varchar(10));
 Query OK, 0 rows affected (0,49 sec)
 ```
 
@@ -403,8 +403,68 @@ Una vez resueltos todos los problemas y habiendo comprobado que funciona la repl
 
 ## Configuración maestro-maestro
 
+En este [enlace](https://www.linode.com/docs/databases/mysql/configure-master-master-mysql-database-replication/) tenemos un tutorial para configurar los dos servidores como maestros. [Aquí](https://www.digitalocean.com/community/tutorials/how-to-set-up-mysql-master-master-replication) tenemos otro. Para la configuración he seguido una mezcla de ambos tutoriales.
+
+De nuevo cogeremos las dos máquinas **m1** y **m2** de la práctica1, las he clonado. Esta configuración nos permite que los datos estén replicados entre ambos servidores independientemente de en que servidor sea sobre el que se escriben o modifican los datos. Esto agrega redundancia y aumenta la eficiencia al acceder a los datos.
+
+Comenzaremos con la configuración del servidor **m1** al igual que para el maestro esclavo, tenemos que editar el archivo de configuración de mysql, cambiando las líneas:
+- server-id              = 1
+- log_bin                = /var/log/mysql/bin.log
+- binlog_do_db           = include_database_name
+- bind-address           = 127.0.0.1
+
+La primera línea la descomentamos ya que es la que identifica a nuestro servidor con un id único, la segunda línea es el archivo de logs, la tercera línea es la que indica que bases de datos se replicaran entre nuestros servidores y la última línea es la que indica al servidor que acepte conexiones externas a localhost.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/18.JPG)
+
+Reiniciamos el mysql:
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/19.JPG)
+
+Creamos nuestra base de datos, e introducimos algunos datos en la tabla:
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/20.JPG)
+
+Ahora necesitamos crear un usuario que se usará para replicar datos entre m1 y m2.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/21.JPG)
+
+A continuación le damos permisos para que pueda replicar los datos.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/22.JPG)
+
+Consultamos el estado del servidor master en m1.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/23.JPG)
+
+Configuramos mysql en el servidor m2, editamos el archivo de configuración igual que para m1 pero cambiando el id del servidor.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/24.JPG)
+
+Y reiniciamos el servicio para que los cambios se apliquen.
+
+```BASH
+elvira@m2:~$ sudo service mysql restart
+```
+
+Al igual que en el servidor m1, vamos a crear un  usuario que será el que replique la bd.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/25.JPG)
+
+Y asignamos los permisos para replicar igual que en m1.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/26.JPG)
+
+Ahora usando la informacion de estado del servidor m1, la aplicamos a m2.
+```BASH
+mysql> change master to master_host='192.168.80.131', master_user='replicator', master_password='password', master_log_file='bin.000001', master_log_pos=2456, master_port=3306;
+Query OK, 0 rows affected, 2 warnings (0,29 sec)
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/27.JPG)
+
+Si nos fijamos, hasta aqui, todo es igual que cuando instalamos el servidor maestro esclavo. A continuación tomaremos nota de los valores de MASTER LOG FILE y MASTER LOG POS del servidor m2 para añadirlos al servidor m1 como si ahora m1 fuera el esclavo.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/28.JPG)
 
 
-
-En este [enlace](https://certbot.eff.org/lets-encrypt/ubuntuxenial-nginx) Seleccionando nuestro balanceador y el sistema operativo sobre el que trabajamos, nos facilita una guia de instalación de certbot. Pero no tengo un dominio para poder hacer este ejercicio opcional.
-
+insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("6", "12352145W", "Alejandro Jeronimo", "Pichi", "Pollito", "13012016");
