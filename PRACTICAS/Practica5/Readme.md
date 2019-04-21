@@ -196,7 +196,7 @@ A continuación, restauramos los datos de la BD que están en el script sql que 
 
 ## Replicación mediante configuración maestro-esclavo
 
-Para realizar la copia de manera automática, usaremos el demonio de MySQL, que copia los datos desde un servidor llamado maestro a otro llamado esclavo.
+Para realizar la copia de la base de datos de forma manual, vamos a hacerlo de manera automática. Para lo que usaremos el demonio de MySQL, que copia los datos desde un servidor llamado maestro a otro llamado esclavo.
 
 ### Empezamos por la configuración del **servidor maestro** que en mi caso será **m1**.
 Necesitamos editar el archivo de configuración de MySQL
