@@ -466,5 +466,18 @@ Si nos fijamos, hasta aqui, todo es igual que cuando instalamos el servidor maes
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/28.JPG)
 
+En el servidor m2:
 
-insert into DatosMascotas(IDM,DNID,NombreD, NombreM, Especie, FechaNacimiento) values ("6", "12352145W", "Alejandro Jeronimo", "Pichi", "Pollito", "13012016");
+```BASH
+mysql> change master to master_host='192.168.80.132', master_user='replicator', master_password='password', master_log_file='bin.000003', master_log_pos=154, master_port=3306;
+Query OK, 0 rows affected, 2 warnings (0,14 sec)
+
+mysql> start slave;
+Query OK, 0 rows affected (0,06 sec)
+```
+
+Una vez hecho esto, ya tenemos nuestros servidores como maestro-maestro. vamos a probarlos por ejemplo añadiendo un registro en la tabla DatosMascotas de m1 a ver si aparece en m2. Y a continuacion en m2 insertamos otro dato en la tabla y comprobamos que automaticamente está en m1.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/28.JPG)
+
+Como podemos ver en la imagen anterior, ya tenemos perfectamente configurados nuestos dos servidores como maestro-maestro.
