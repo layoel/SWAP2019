@@ -397,7 +397,7 @@ El fallo de la imagen anterior es debido a que cuando cree las máquinas la clon
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/16.JPG)
 
-Una vez resueltos todos los problemas y habiendo comprobado que funciona la replicación de los datos, ya solo nos queda seguir introduciendo datos en el maestro, y automaticamente se replican en el esclavo.
+Una vez resueltos todos los problemas y habiendo comprobado que funciona la replicación de los datos, ya solo nos queda seguir introduciendo datos en el maestro, y ver que automaticamente se replican en el esclavo.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/17.JPG)
 
