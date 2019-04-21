@@ -10,9 +10,11 @@ Los objetivos que se quieren conseguir con esta práctica son:
 Para esta práctica usaré de nuevo los servidores web **m1** (192.168.80.131), **m2** (192.168.80.132) de la práctica1.
 
 Como vimos en la práctica 1 podemos copiar archivos entre servidores con **tar** o bien con **scp**
+
 ```bash
 elvira@m1:~$ tar czf - ./tar.tgz | ssh 192.168.80.132 'cat > ~/tar.tgz'
 ```
+
 Pero para copiar bases de datos hay otras formas de hacerlo, lo veremos a continuación.
 
 
@@ -47,6 +49,7 @@ Empty set (0,00 sec)
 mysql> create table DatosMascotas(IDM int, DNID varchar(9), NombreD varchar(100), NombreM varchar(100), Especie varchar(100), FechaNacimiento varchar(10));
 Query OK, 0 rows affected (0,49 sec)
 ```
+
 Una vez hemos creado nuestra base de datos para la clínica veterinaria y hemos creado la tabla, tenemos que introducir los datos de los animalitos que se tratan en la clínica junto con los datos de sus dueños.
 
 ```bash
@@ -73,6 +76,7 @@ Para esta parte de la práctica vamos a usar la herramienta **mysqldump** con la
 ```bash
 elvira@m1:~$ mysqldump --help
 ```
+
 Para poder hacer la copia de seguridad, primero tenemos que evitar que se acceda a la Base de datos para cambiar nada, para que los datos sean correctos a la hora de hacer la copia y no pueda haber problemas de inconsistencia de datos. Para eso ejecutaremos lo siguente:
 
 ```bash
@@ -84,9 +88,11 @@ mysql> quit
 ```
 
 Ahora usaremos **mysqldump** para hacer copia de los datos.
+
 ```bash
 elvira@m1:~$ sudo mysqldump mascotas -u root -p > /tmp/copymascotas.sql
 ```
+
 Nos pide la contraseña del usuario y de root, pero finalmente hace una copia en la carpeta que hemos indicado.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/2.JPG)
@@ -114,6 +120,7 @@ Query OK, 0 rows affected (0,00 sec)
 mysql> quit
 Bye
 ```
+
 Como ya tenemos la copia ahora hay que pasarla al servidor **m2**, la copiaremos como ya sabemos o bien con rsync o con scp.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/4.JPG)
@@ -210,6 +217,7 @@ Tenemos que comentar de ese fichero la linea siguiente para que escuche a un ser
 ```BASH
 # bind-address           = 127.0.0.1
 ```
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/8.JPG)
 
 Y habilitar las lineas siguientes que son las que dicen donde se almacenara el log de errores, el identificador del servidor y donde está el registro binario que tiene toda la información disponible sobre la base de datos.
@@ -234,14 +242,15 @@ Debemos editar el archivo de configuración con los mismos parámetros que para 
 elvira@m2:~$ sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 [sudo] password for elvira:
 ```
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/9.JPG)
 
 Y reiniciamos el servicio.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/10.JPG)
 
-
 Una vez configurados el maestro y el esclavo, volvemos al servidor maestro para crear un usuario y darle permisos para que haga la replicación.
+
 ```BASH
 elvira@m1:~$ mysql -u root -p
 Enter password:
@@ -272,6 +281,7 @@ Query OK, 0 rows affected (0,00 sec)
 mysql> flush tables with read lock;
 Query OK, 0 rows affected (0,00 sec)
 ```
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/11.JPG)
 
 Mostramos los datos del maestro, que los vamos a necesitar en la máquina esclava con la siguiente orden en la consola mysql.
@@ -311,7 +321,7 @@ Probamos que se replica la bd del maestro al esclavo, añadiendo en el maestro (
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/13.JPG)
 
-consultamos si se ha replicado en el esclavo, con la orden
+consultamos el estado del esclavo, con la orden
 
 ```BASH
 elvira@m2:~$ mysql -u root -p
@@ -378,13 +388,18 @@ Master_SSL_Verify_Server_Cert: No
            Master_TLS_Version:
 1 row in set (0,00 sec)
 ```
+
 Realizando esta práctica en la versión inicial me encontré que al llegar aquí, tenía este fallo:
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/15.JPG)
+
 El fallo de la imagen anterior es debido a que cuando cree las máquinas la cloné para seguir con el resto de prácticas y tiene el mismo id en mysql he encontrado [aquí](https://www.beehexa.com/blog/2017/12/17/how-to-fix-master-and-slave-have-equal-mysql-server-uuids-mysql-error/) la solución al problema.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/16.JPG)
 
 Una vez resueltos todos los problemas y habiendo comprobado que funciona la replicación de los datos, ya solo nos queda seguir introduciendo datos en el maestro, y automaticamente se replican en el esclavo.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/17.JPG)
 
 ## Configuración maestro-maestro
 
