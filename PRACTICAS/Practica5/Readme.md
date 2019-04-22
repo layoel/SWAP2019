@@ -399,7 +399,7 @@ El fallo de la imagen anterior es debido a que cuando cree las máquinas la clon
 
 Una vez resueltos todos los problemas y habiendo comprobado que funciona la replicación de los datos, ya solo nos queda seguir introduciendo datos en el maestro, y ver que automaticamente se replican en el esclavo.
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/17.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/30.JPG)
 
 ## Configuración maestro-maestro
 
@@ -481,3 +481,5 @@ Una vez hecho esto, ya tenemos nuestros servidores como maestro-maestro. vamos a
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/29.JPG)
 
 Como podemos ver en la imagen anterior, ya tenemos perfectamente configurados nuestos dos servidores como maestro-maestro.
+
+
