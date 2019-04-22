@@ -2,7 +2,8 @@
 
 # Tema1
 
-## Ejercicio 1.1 **Buscar información sobre las tareas o servicios web para los que se usan más los programas:**
+## Ejercicio 1.1 
+### Buscar información sobre las tareas o servicios web para los que se usan más los programas:
 
 - **Apache**: La wikipedia define " Apache es un servidor web HTTP de código abierto, para plataformas Unix (BSD, GNU/Linux, etc.)" La web oficial de [Apache](https://httpd.apache.org/) podemos encontrar  toda la documentación necesaria para instalar y configurar un servidor con Apache. Si indagamos un poco por la red podemos ver que algunas empresas importantes que usan apache incluyen a Cisco, IBM, Salesforce, General Elecctric Adobe, VMWare, Xerox, Linkedln, Facebook, Hewlett-Packard, At & T, Siemens, Ebay y más.[fuente](https://kinsta.com/es/base-de-conocimiento/que-es-apache/). 
 
@@ -18,7 +19,8 @@
 
 # Tema2
 
-## Ejercicio 2.1 **Calcular la disponibilidad del sistema si tenemos dos réplicas de cada elemento (en total 3 elementos en cada subsistema).**
+## Ejercicio 2.1 
+### Calcular la disponibilidad del sistema si tenemos dos réplicas de cada elemento (en total 3 elementos en cada subsistema).
 
 Para calcular la disponibilidad con 1 replica usamos la formula *As = Acn-1 + ( (1 – Acn-1) * Acn )*
 
@@ -38,7 +40,8 @@ Donde:
 | **Datacenter**  |    **0.999900000** |     *0.999900000* |     *0.999900000* |
 | **ISP**         |    **0.950000000** |     *0.997500000* |     *0.999875000* |
 
-## Ejercicio 2.2 **Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2 [*https://github.com/Unitech/pm2* ](https://github.com/Unitech/pm2) que sirve para administrar clústeres de NodeJS.**
+## Ejercicio 2.2 
+### Buscar frameworks y librerías para diferentes lenguajes que permitan hacer aplicaciones altamente disponibles con relativa facilidad. Como ejemplo, examina PM2 [*https://github.com/Unitech/pm2* ](https://github.com/Unitech/pm2) que sirve para administrar clústeres de NodeJS.
 
 - [Frameworks para desarrollo web con PHP](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
 
@@ -64,7 +67,8 @@ Donde:
 	- [*Goggle Web Toolkit*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
 	- [*Grails*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
 
-## Ejercicio 2.3 **¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas. ...¡o recordar cómo usarlas!**
+## Ejercicio 2.3
+### ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas. ...¡o recordar cómo usarlas!
 
 - [Monitorización de servidor linux por consola](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- top
@@ -83,50 +87,64 @@ Donde:
 	- cacti
 	- munin
 	- collectd
-- [Monitorización de infraestructuras]((https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
+- [Monitorización de infraestructuras](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- Nagios
 	- Zabix
 
 ## Ejercicio 2.4
-- **Buscar ejemplos de balanceadores software y hardware (productos comerciales).**
-- **Buscar productos comerciales para servidores de aplicaciones.**
-- **Buscar productos comerciales para servidores de almacenamiento.**
+### Buscar ejemplos de balanceadores software y hardware (productos comerciales).
+### Buscar productos comerciales para servidores de aplicaciones.
+### Buscar productos comerciales para servidores de almacenamiento.
 
 --------------------------------------------------------
 
 # Tema3
 
-## Ejercicio 3.1 **Buscar con qué órdenes de terminal o herramientas podemos configurar bajo Windows y bajo Linux el enrutamiento del tráfico de un servidor para pasar el tráfico desde una subred a otra.**
+## Ejercicio 3.1 
+### Buscar con qué órdenes de terminal o herramientas podemos configurar bajo Windows y bajo Linux el enrutamiento del tráfico de un servidor para pasar el tráfico desde una subred a otra.
 
-## Ejercicio 3.2 **Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.**
+## Ejercicio 3.2 
+### Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.
 
 ----------------------------------------------------------------------
 # Tema4
 
-## Ejercicio 4.1 **Buscar información sobre cuánto costaría en la actualidad un mainframe que tuviera las mismas prestaciones que una granja web con balanceo de carga y 10 servidores finales (p.ej).**
+## Ejercicio 4.1
+###Buscar información sobre cuánto costaría en la actualidad un mainframe que tuviera las mismas prestaciones que una granja web con balanceo de carga y 10 servidores finales (p.ej).
 
-## Ejercicio 4.2 **Buscar información sobre precio y características de balanceadores comerciales (hardware) específicos. Compara las prestaciones que ofrecen unos y otros.**
+## Ejercicio 4.2
+### Buscar información sobre precio y características de balanceadores comerciales (hardware) específicos. Compara las prestaciones que ofrecen unos y otros.
 
-## Ejercicio 4.3 **Instala y configura en una máquina virtual el balanceador ZenLoadBalancer. Compara con la dificultad de la instalación y configuración usando nginx o haproxy (práctica 3).**
+## Ejercicio 4.3
+### Instala y configura en una máquina virtual el balanceador ZenLoadBalancer. Compara con la dificultad de la instalación y configuración usando nginx o haproxy (práctica 3).
 
-## Ejercicio 4.4 **Implementar un pequeño servicio web en los servidores finales que devuelva el % CPU y % RAM que en un instante tiene en uso dicho servidor. Lo debe devolver como una cadena de texto plano que representa ambos porcentajes, p.ej: “CPU 45% RAM 76%”**
+## Ejercicio 4.4 
+### Implementar un pequeño servicio web en los servidores finales que devuelva el % CPU y % RAM que en un instante tiene en uso dicho servidor. Lo debe devolver como una cadena de texto plano que representa ambos porcentajes, p.ej: “CPU 45% RAM 76%”
 
-## Ejercicio 4.5 **Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2 (o el software que hemos propuesto para la práctica 3).**
+## Ejercicio 4.5
+### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2 (o el software que hemos propuesto para la práctica 3).
 
-## Ejercicio 4.6 **Probar las diferentes maneras de redirección HTTP. ¿Cuál es adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?**
+## Ejercicio 4.6 
+### Probar las diferentes maneras de redirección HTTP. ¿Cuál es adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?
 
-## Ejercicio 4.7 **Buscar información sobre los bloques de IP para los distintos países o continentes**
+## Ejercicio 4.7 
+### Buscar información sobre los bloques de IP para los distintos países o continentes
 
-## Ejercicio 4.8 **Buscar información sobre métodos y herramientas para implementar GSLB.**
+## Ejercicio 4.8
+### Buscar información sobre métodos y herramientas para implementar GSLB.
 
 ----------------------------------------------------------------------
 # Tema5
 
-## Ejercicio 5.1 **Buscar información sobre cómo calcular el número de conexiones por segundo.**
+## Ejercicio 5.1
+### Buscar información sobre cómo calcular el número de conexiones por segundo.
 
-## Ejercicio 5.2 ** Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP… o en la red de casa**
+## Ejercicio 5.2
+### Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP… o en la red de casa
 
-## Ejercicio 5.3 **Buscar información sobre características, funcionalidad, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.**
+## Ejercicio 5.3 
+### Buscar información sobre características, funcionalidad, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
+
 - top
 - vmstat
 - netstat
@@ -134,5 +152,6 @@ Donde:
 ----------------------------------------------------------------------
 # Tema6
 
-## Ejercicio 6.1 **dfd**
+## Ejercicio 6.1 
+### dfd
 ----------------------------------------------------------------------
