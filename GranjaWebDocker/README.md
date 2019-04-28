@@ -28,6 +28,10 @@ Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan d
 
 ### Elementos básicos de Docker
 
+- **Imágenes**: Es una plantilla que contiene el estado de un contenedor. Digamos que podría ser como un snapshot de una máquina virtual. Por ejemplo, nosotros usaremos para montar la granja web una imágen con ubuntu y apache y otra imagen con ubuntu y nginx. 
+Las imágenes se usan para crear contenedores y no varían. El registro que tiene Docker donde podemos obtener las imágenes de base que necesitemos o crear nuestras propias imágenes y compartirlas, se llama **dockerhub**. Que funciona como una especie de repositorio de imágenes ya diseñadas.
+
+- **Contenedores**: Son instancias en ejecución
 
 
 ## Instalación de Docker
