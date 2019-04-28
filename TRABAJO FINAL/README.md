@@ -8,7 +8,7 @@ https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/TRABAJO%20FINAL/imagenes/2.JPG)
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/TRABAJO%20FINAL/imagenes/3.JPG)
+![imagen]("https://github.com/layoel/SWAP2019/blob/master/TRABAJO%20FINAL/imagenes/3.JPG")
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/TRABAJO%20FINAL/imagenes/4.JPG)
 
