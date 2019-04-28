@@ -29,12 +29,31 @@ Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan d
 ### Elementos básicos de Docker
 
 - **Imágenes**: Es una plantilla que contiene el estado de un contenedor. Digamos que podría ser como un snapshot de una máquina virtual. Por ejemplo, nosotros usaremos para montar la granja web una imágen con ubuntu y apache y otra imagen con ubuntu y nginx. 
-Las imágenes se usan para crear contenedores y no varían. El registro que tiene Docker donde podemos obtener las imágenes de base que necesitemos o crear nuestras propias imágenes y compartirlas, se llama **dockerhub**. Que funciona como una especie de repositorio de imágenes ya diseñadas.
+Las imágenes se usan para crear contenedores y no varían. El registro que tiene Docker donde podemos obtener las imágenes de base que necesitemos o crear nuestras propias imágenes y compartirlas, se llama [**dockerhub**](https://hub.docker.com/). Que funciona como una especie de repositorio de imágenes ya diseñadas.
+
+- **Dockerfile**: es el archivo de configuración que se usa para crear imágenes. En este archivo indicamos que es lo que queremos que tenga la imagen y los comandos para instalar las herramientas que necesitamos. Un ejemplo de Dockerfile seria el siguiente:
+
+```Bash
+FROM debian
+MAINTAINER Usuario elvira "usuario@ugr.es"
+RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+ENV APACHE_RUN_USER www-data
+ENV APACHE_RUN_GROUP www-data
+ENV APACHE_LOG_DIR /var/log/apache2
+EXPOSE 80
+ADD ["index.html","/var/www/html/"]
+ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
+```
+En la [documentación de docker](https://docs.docker.com/engine/reference/builder/) hay varios ejemplos y explicaciones detalladas de como escribir un dockerfile.
+
 
 - **Contenedores**: Son instancias en ejecución,los que ejecutan nuestra aplicación. Es como si restauramos una máquina virtual a partir de un snapshot. Con una única imagen, podemos crear tantos contenedores como queramos. Así en nuestra granja web, podremos tener copias de nuestra aplicación web en varios contenedores, para despues a través del balanceador de carga, distribuir los accesos a la aplicación y ofrecer servicios con mejores grarantías y menos carga de peticiones por contenedor. También podemos crear distitnas versiones de contenedores, hacer commit para crear otra imagen con los cambios realizados y si algo va mal, volver a la versión anterior del contenedor.
 
 - **Volúmenes**: Se usan para compartir datos entre contenedores. Los datos persistentes, deben guardarse en volúmenes de tal forma que cuando borremos un contenedor no perdamos los datos importantes.
 
+### Docker Machine, Docker compose y Docker Swarm.
+https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/
 
 ## Instalación de Docker
 Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
