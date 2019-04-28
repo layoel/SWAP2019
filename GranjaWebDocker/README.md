@@ -60,14 +60,16 @@ Busco imagenes de nginx en docker:
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/7.JPG)
 
 Creación de una máquina con nginx
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/8.JPG)
+
 A partir de la imagen oficial de nginx creamos el contenedor nginx1, que expone los puertos 80 y
-443 del contenedor en los puertos 8080 y 8443 del host. Además el contenedor se inicia tras la
-ejecución.
+443 del contenedor en los puertos 8080 y 8443 del host. Además el contenedor se inicia tras la ejecución.
 
 Comprobamos que podemos acceder al servidor NGINX en http://localhost:8080
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/9.JPG)
+
 Para ver todos los contenedores que están ejecutándose:
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/10.JPG)
