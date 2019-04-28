@@ -481,5 +481,3 @@ Una vez hecho esto, ya tenemos nuestros servidores como maestro-maestro. vamos a
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/29.JPG)
 
 Como podemos ver en la imagen anterior, ya tenemos perfectamente configurados nuestos dos servidores como maestro-maestro.
-
-
