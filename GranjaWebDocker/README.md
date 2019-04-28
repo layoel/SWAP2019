@@ -2,7 +2,7 @@
 
 Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
 
-##Instalación de Docker
+## Instalación de Docker
 
 Instalaremos Docker en una máquina con Ubuntu 16.04 como sistema operativo.
 
@@ -41,7 +41,7 @@ sudo usermod -aG docker $(whoami)
 ```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/12.JPG)
 
-##Creando mi Granja Web
+## Creando mi Granja Web
 
 Ya tenemos instalado docker en nuestro equipo. Ahora si queremos ver información sobre Docker en el sistema podemos usar:
 
