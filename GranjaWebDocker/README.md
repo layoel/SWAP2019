@@ -31,7 +31,9 @@ Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan d
 - **Imágenes**: Es una plantilla que contiene el estado de un contenedor. Digamos que podría ser como un snapshot de una máquina virtual. Por ejemplo, nosotros usaremos para montar la granja web una imágen con ubuntu y apache y otra imagen con ubuntu y nginx. 
 Las imágenes se usan para crear contenedores y no varían. El registro que tiene Docker donde podemos obtener las imágenes de base que necesitemos o crear nuestras propias imágenes y compartirlas, se llama **dockerhub**. Que funciona como una especie de repositorio de imágenes ya diseñadas.
 
-- **Contenedores**: Son instancias en ejecución
+- **Contenedores**: Son instancias en ejecución,los que ejecutan nuestra aplicación. Es como si restauramos una máquina virtual a partir de un snapshot. Con una única imagen, podemos crear tantos contenedores como queramos. Así en nuestra granja web, podremos tener copias de nuestra aplicación web en varios contenedores, para despues a través del balanceador de carga, distribuir los accesos a la aplicación y ofrecer servicios con mejores grarantías y menos carga de peticiones por contenedor. También podemos crear distitnas versiones de contenedores, hacer commit para crear otra imagen con los cambios realizados y si algo va mal, volver a la versión anterior del contenedor.
+
+- **Volúmenes**:
 
 
 ## Instalación de Docker
