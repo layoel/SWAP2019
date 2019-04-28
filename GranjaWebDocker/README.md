@@ -33,7 +33,7 @@ Las imágenes se usan para crear contenedores y no varían. El registro que tien
 
 - **Contenedores**: Son instancias en ejecución,los que ejecutan nuestra aplicación. Es como si restauramos una máquina virtual a partir de un snapshot. Con una única imagen, podemos crear tantos contenedores como queramos. Así en nuestra granja web, podremos tener copias de nuestra aplicación web en varios contenedores, para despues a través del balanceador de carga, distribuir los accesos a la aplicación y ofrecer servicios con mejores grarantías y menos carga de peticiones por contenedor. También podemos crear distitnas versiones de contenedores, hacer commit para crear otra imagen con los cambios realizados y si algo va mal, volver a la versión anterior del contenedor.
 
-- **Volúmenes**:
+- **Volúmenes**: Se usan para compartir datos entre contenedores. Los datos persistentes, deben guardarse en volúmenes de tal forma que cuando borremos un contenedor no perdamos los datos importantes.
 
 
 ## Instalación de Docker
