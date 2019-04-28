@@ -1,8 +1,37 @@
 # TRABAJO FINAL: Creación de una granja web con docker.
 
-Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
+## ¿Qué es Docker?
+
+Docker es una herramienta cuya finalidad es crear contenedores que sean ligeros y portables, para aplicaciones software que puedan ejecutarse en cualquier máquina que tenga instalado Docker, sin depender del sistema operativo anfitrión de esa máquina. Esto último facilita los despliegues enormemente.
+- Ligeros porque son procesos que comparten el kernel del SO.
+- Portables porque se pueden crear localmente y ejecutar en cualquier entorno no en computación en la nube. Además, al desplegarse en proveedores en la nube, sin tener que definir una infraestructura, se reducen los costes a dichos proveedores y estos a su vez ofrecen menor coste en la ejecución.
+- Intercamiables porque se pueden desarrollar nuvas actualizaciones y son fácilmente actualizables.
+- Escalables porque se pueden añadir y distribuir copias.
+- Flexibles porque hay gran cantidad de aplicaciones que pueden ser incluidas en un contenedor.
+
+### ¿Qué es un contenedor?
+
+Un contenedor simplifica la virtualización clásica, porque es capaz de montar un sistema de ficheros completo con un sistema operativo completo, puede alojar cualquier librería que se pueda instalar y sobre todo, lo más importante es que podemos desplegar nuestra aplicación sin necesidad de tener un hypervisor.
+
+### Beneficios de usar Docker
+
+El uso de Docker beneficia tanto a desarrolladores, testers y administradores de sistemas.
+- **Desarrolladores**: el uso de Docker hace que puedan centrarse en desarrollar su código sin preocuparse si dicho código funcionará en la máquina en la que se ejecutará al final.
+- **Testers**: con Docker se pueen crear entornos de pruebas. Es sencillo crear y borrar un contenedor, además como dijimos anteriormente, son ligeros y podemos ejecutar varios contenedores en una misma máquina.
+- **Sysadmin** (Administradores de sistemas): debido a la cualidad de que los contenedores son más ligeros que las máquinas virtuales, se redice el número de máquinas necesarias para tener en un entorno.
+
+### Comparativa Docker vs Virtual Machine
+
+Son conceptos similares, pero un contenedor es más ligero. Una máquina virtual necesita instalar el Sistema Operativo para que funcione, mientras que Docker usa el Sistema Operatívo que tiene la máquina en la que se ejecuta el contenedor.
+
+Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan dentro del contenedor los recursos más básicos que no cambian de un ordenador a otro y los aspectos más específicos del sistema que puedn dar más problemas a la hora de llevar el software de un lado a otro.
+
+### Elementos básicos de Docker
+
+
 
 ## Instalación de Docker
+Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
 
 Instalaremos Docker en una máquina con Ubuntu 16.04 como sistema operativo.
 
