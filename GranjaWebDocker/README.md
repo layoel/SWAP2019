@@ -193,7 +193,7 @@ Accedemos por ssh a la máquina *m1* que será el nodo principal de nuestra gran
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/21.JPG)
 
-Vamos a usar docker swarm para relacionar los 3 contenedores. Usaremos la siguiente instrucción.
+Vamos a usar docker swarm para crear un cluster con las 4 máquinas. Usaremos la siguiente instrucción.
 
 ```bash
 docker@m1:~$ docker swarm init --advertise-addr 192.168.99.104
