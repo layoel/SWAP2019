@@ -187,7 +187,7 @@ Para saber la ip de la maquina creada podemos ejecutar el comando:
 $ docker-machine ip m1
 ```
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/19.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/34.JPG)
 
 Accedemos por ssh a la máquina *m1* que será el nodo principal de nuestra granja web.
 
