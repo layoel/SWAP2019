@@ -45,15 +45,55 @@ ADD ["index.html","/var/www/html/"]
 ENTRYPOINT ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
 
 ```
-En la [documentación de docker](https://docs.docker.com/engine/reference/builder/) hay varios ejemplos y explicaciones detalladas de como escribir un dockerfile.
+En la [documentación de docker](https://docs.docker.com/engine/reference/builder/) hay varios ejemplos y explicaciones detalladas de como escribir y crear nuestro propio dockerfile.
 
 
 - **Contenedores**: Son instancias en ejecución,los que ejecutan nuestra aplicación. Es como si restauramos una máquina virtual a partir de un snapshot. Con una única imagen, podemos crear tantos contenedores como queramos. Así en nuestra granja web, podremos tener copias de nuestra aplicación web en varios contenedores, para despues a través del balanceador de carga, distribuir los accesos a la aplicación y ofrecer servicios con mejores grarantías y menos carga de peticiones por contenedor. También podemos crear distitnas versiones de contenedores, hacer commit para crear otra imagen con los cambios realizados y si algo va mal, volver a la versión anterior del contenedor.
 
 - **Volúmenes**: Se usan para compartir datos entre contenedores. Los datos persistentes, deben guardarse en volúmenes de tal forma que cuando borremos un contenedor no perdamos los datos importantes.
 
-### Docker Machine, Docker compose y Docker Swarm.
-https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/
+### [Docker Machine, Docker compose y Docker Swarm.](https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/)
+
+- **Docker Machine**: Esta herramienta nos ayuda a crear contenendores en plataformas de virtualización como: VMware, VirtualBox y en otras plataformas como AWS, Azure, DigitalOcean, Exoscale, Google Compute Engine, OpenStack, SpofLayer, VMware vSphere y vCloud Aire.
+
+- **Docker Compose**: Con esta herramienta podemos gestionar varios contenedores que funcionan en conjunto. Con Docker Compose podemos administrar los contenedores con un archivo de configuración que se llama *docker-compose.yml* donde determinaremos como estarán vinculados los contenedores, los puertos que deben estar expuestos al usuario final... Un ejemplo del fichero mencionado anteriormente podria ser:
+```Bash
+version: '3.3'
+
+services:
+ db:
+ 	image: mysql:5.7
+ 	volumes:
+ 	- db_data:/var/lib/mysql
+ 	restart: always
+ 	environment:
+		 MYSQL_ROOT_PASSWORD: somewordpress
+		 MYSQL_DATABASE: wordpress
+		 MYSQL_USER: wordpress
+		 MYSQL_PASSWORD: ECAwordpress
+ wordpress:
+	 depends_on:
+	 - db
+	 image: wordpress:latest
+	 ports:
+	 - "8000:80"
+	 restart: always
+	 environment:
+		 WORDPRESS_DB_HOST: db:3306
+		 WORDPRESS_DB_USER: wordpress
+		 WORDPRESS_DB_PASSWORD: ECAwordpress
+volumes:
+ db_data
+```
+
+
+
+
+
+
+
+
+
 
 ## Instalación de Docker
 Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
@@ -129,6 +169,7 @@ Para ver todos los contenedores que están ejecutándose:
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/10.JPG)
 
 Para ver todos los contenedores:
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/11.JPG)
 
 Practica 3 cpd crear contenedores docker  ejemplo de nginx
