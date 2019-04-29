@@ -16,15 +16,18 @@ Un contenedor simplifica la virtualización clásica, porque es capaz de montar 
 ### Beneficios de usar Docker
 
 El uso de Docker beneficia tanto a desarrolladores, testers y administradores de sistemas.
+
 - **Desarrolladores**: el uso de Docker hace que puedan centrarse en desarrollar su código sin preocuparse si dicho código funcionará en la máquina en la que se ejecutará al final.
+
 - **Testers**: con Docker se pueen crear entornos de pruebas. Es sencillo crear y borrar un contenedor, además como dijimos anteriormente, son ligeros y podemos ejecutar varios contenedores en una misma máquina.
-- **Sysadmin** (Administradores de sistemas): debido a la cualidad de que los contenedores son más ligeros que las máquinas virtuales, se redice el número de máquinas necesarias para tener en un entorno.
+
+- **Sysadmin** (Administradores de sistemas): debido a la cualidad de que los contenedores son más ligeros que las máquinas virtuales, se reduce el número de máquinas necesarias para tener en un entorno.
 
 ### Comparativa Docker vs Virtual Machine
 
 Son conceptos similares, pero un contenedor es más ligero. Una máquina virtual necesita instalar el Sistema Operativo para que funcione, mientras que Docker usa el Sistema Operatívo que tiene la máquina en la que se ejecuta el contenedor.
 
-Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan dentro del contenedor los recursos más básicos que no cambian de un ordenador a otro y los aspectos más específicos del sistema que puedn dar más problemas a la hora de llevar el software de un lado a otro.
+Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan dentro del contenedor los recursos más básicos que no cambian de un ordenador a otro y los aspectos más específicos del sistema que pueden dar más problemas a la hora de llevar el software de un lado a otro.
 
 ### Elementos básicos de Docker
 
@@ -54,9 +57,17 @@ En la [documentación de docker](https://docs.docker.com/engine/reference/builde
 
 ### [Docker Machine, Docker compose y Docker Swarm.](https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/)
 
+El proyecto Docker engloba una serie de herramientas muy útiles. Podemos seleccionar la que mas se adapte a nuestro problema dependiendo del alcance que tengamos que cubrir. 
+
+Por ejemplo si solo queremos probar una aplicación, usaremos *docker machine* para crear un contenedor y probarla. Si queremos probar el funcionamiento de un conjunto de aplicaciones relacionadas entre si usaremos *docker compose* y por último si queremos montar un sistema que sea redundante y que use balanceo entre máquinas usaremos *docker swarm*. 
+
+A continuación explicaremos brevemente en que consiste cada una de las herramientas mencionadas anteriormente.
+
 - **Docker Machine**: Esta herramienta nos ayuda a crear contenendores en plataformas de virtualización como: VMware, VirtualBox y en otras plataformas como AWS, Azure, DigitalOcean, Exoscale, Google Compute Engine, OpenStack, SpofLayer, VMware vSphere y vCloud Aire. Para instalar docker machine podemos seguir [este tutorial](https://docs.docker.com/machine/install-machine/), de la web oficial de docker.
 
-- **Docker Compose**: Con esta herramienta podemos gestionar varios contenedores que funcionan en conjunto. Con Docker Compose podemos administrar los contenedores con un archivo de configuración que se llama *docker-compose.yml* donde determinaremos como estarán vinculados los contenedores, los puertos que deben estar expuestos al usuario final... Un ejemplo del fichero mencionado anteriormente podria ser:
+- **Docker Compose**: Con esta herramienta podemos gestionar varios contenedores que funcionan en conjunto. Con Docker Compose podemos administrar los contenedores con un archivo de configuración que se llama *docker-compose.yml* donde determinaremos como estarán vinculados los contenedores, los puertos que deben estar expuestos al usuario final... 
+En el siguiente archivo de ejemplo hemos creado un entorno de wordpress basado en una base de datos MySQL y el propio Wordpress.
+Docker Compose nos permite crear soluciones más complejas que requieren de multiples aplicaciones.
 ```Bash
 version: '3.3'
 
@@ -85,8 +96,7 @@ services:
 volumes:
  db_data
 ```
-En el que hemos creado un entorno de wordpress basado en una base de datos MySQL y el propio Wordpress.
-Docker Compose nos permite crear soluciones más complejas que requieren de multiples aplicaciones.
+
 
 - **Docker Swarm**: Esta herramienta, nos permite distribuir contenedores entre distintas máquinas de forma que pueda distribuirse la ejecución. Esta característica hace que sea la herramienta mas interesante de las que dispone docker. Podemos crear agrupaciones de contenedores ya agrupados anteriormente, es decir, con esto podemos crear clusteres de contenedores con las aplicaciones que necesitemos. 
 
