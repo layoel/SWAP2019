@@ -70,6 +70,7 @@ A continuación explicaremos brevemente en que consiste cada una de las herramie
 - **Docker Compose**: Con esta herramienta podemos gestionar varios contenedores que funcionan en conjunto. Con Docker Compose podemos administrar los contenedores con un archivo de configuración que se llama *docker-compose.yml* donde determinaremos como estarán vinculados los contenedores, los puertos que deben estar expuestos al usuario final... 
 En el siguiente archivo de ejemplo hemos creado un entorno de wordpress basado en una base de datos MySQL y el propio Wordpress.
 Docker Compose nos permite crear soluciones más complejas que requieren de multiples aplicaciones.
+
 ```Bash
 version: '3.3'
 
@@ -99,10 +100,10 @@ volumes:
  db_data
 ```
 
-
 - **Docker Swarm**: Esta herramienta, nos permite distribuir contenedores entre distintas máquinas de forma que pueda distribuirse la ejecución. Esta característica hace que sea la herramienta mas interesante de las que dispone docker. Podemos crear agrupaciones de contenedores ya agrupados anteriormente, es decir, con esto podemos crear clusteres de contenedores con las aplicaciones que necesitemos. 
 
 ## Instalación de Docker
+
 Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
 
 Instalaremos Docker en una máquina con Ubuntu 16.04 como sistema operativo.
@@ -140,46 +141,153 @@ Tenemos dos opciones para ejecutar comandos docker.
 ```BASH
 sudo usermod -aG docker $(whoami)
 ```
+
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/12.JPG)
 
 ## Creando mi Granja Web
 
-Ya tenemos instalado docker en nuestro equipo. Ahora si queremos ver información sobre Docker en el sistema podemos usar:
+Primero instalaremos docker-machine. Yo voy a instarlo en windows por lo que pondré los pasos para hacerlo con mi sistema operativo, pero en la web de docker tenemos la[ documentación](https://docs.docker.com/machine/install-machine/) de como hacerlo si el sistema operativo anfitrión es linux o macos
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/5.JPG)
+Necesitamos tener instalado Git BASH en windows y virtualbox o bien VMware. Ejecutaremos en una terminal de Git Bash la siguiente instrucción.
 
-Nosotros en este caso vamos a trabajar con **imágenes de Docker**.
+```bash
+$ base=https://github.com/docker/machine/releases/download/v0.16.0 &&
+  mkdir -p "$HOME/bin" &&
+  curl -L $base/docker-machine-Windows-x86_64.exe > "$HOME/bin/docker-machine.exe" &&
+  chmod +x "$HOME/bin/docker-machine.exe"
+```
 
-Para crear nuestra granja web, necesitamos dos servidores con apache y uno con nginx. Por lo que vamos a buscar primero las **imágenes** que hay en docker con **apache** y despues las **imágenes** que hay con **nginx**.
+Y comprobamos la versión que se ha instalado con el comando
+```bash
+$ docker-machine version
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/15.JPG)
 
-Busco imagenes de apache en docker:
+Creamos una máquina con Docker-machine
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/6.JPG)
+```bash
+$ docker-machine create --virtualbox-boot2docker-url https://github.com/boot2docker/boot2docker/releases/download/v19.03.0-beta3/boot2docker.iso m1
+```
+La imágen que vamos a instalar en la maquina m1 que estamos creando es un linux con docker instalado.
 
-Busco imagenes de nginx en docker:
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/16.JPG)
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/7.JPG)
+Para ver la lista de maquinas creadas con docker-machine usamos:
 
-Creación de una máquina con nginx
+```bash
+$ docker-machine ls
+```
+Como podemos observar en la imagen siguiente yo solo tengo un contenedor ejecutandose que se llama *m1* y su ip es la *192.168.99.101*
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/8.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/17.JPG)
 
-A partir de la imagen oficial de nginx creamos el contenedor nginx1, que expone los puertos 80 y
-443 del contenedor en los puertos 8080 y 8443 del host. Además el contenedor se inicia tras la ejecución.
+Para saber la ip de la maquina creada podemos ejecutar el comando:
 
-Comprobamos que podemos acceder al servidor NGINX en http://localhost:8080
+```bash
+$ docker-machine ip m1
+```
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/9.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/19.JPG)
 
-Para ver todos los contenedores que están ejecutándose:
+Accedemos por ssh a la máquina *m1* que será el nodo principal de nuestra granja web.
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/10.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/21.JPG)
 
-Para ver todos los contenedores:
+Vamos a usar docker swarm para relacionar los 3 contenedores. Usaremos la siguiente instrucción.
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/11.JPG)
+```bash
+docker@m1:~$ docker swarm init --advertise-addr 192.168.99.104
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/20.JPG)
 
-Practica 3 cpd crear contenedores docker  ejemplo de nginx
-practica 4 dockerfile crear 3 maquinas
+Esta instrucción indicará que es el nodo principal y si observamos la imagen anterior, tras ejecutarlo nos da un token que tendremos que usar en *m2* y *m3* y el resto de máquinas que queramos añadir.
 
-https://blog.dinahosting.com/servicio-web-con-docker-y-docker-compose/
+Para comprobar cuantos nodos hay actualmente usamos:
+
+```bash
+docker@m1:~$ docker node ls
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/18.JPG)
+
+Nos dirá el id del nodo el nombre, el estado, si esta activo o no, el estatus si es el principal o es secundario, además de la version de docker que se está usando.
+
+
+Saldremos de la máquina m1 
+```bash
+docker@m1:~$ exit
+logout
+
+```
+
+Y crearemos el nodo 2 que le vamos a llamar *m2*. Ahora ya tenemos descargada la imagen, por lo que con el siguiente comando se creará la maquina con la imagen que descargamos anteriormente de github.
+
+```bash
+$ docker-machine create m2
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/22.JPG)
+
+Entramos por ssh al servidor *m2* para añadirlo a la granja web.
+
+```bash
+docker@m2:~$ docker swarm join --token SWMTKN-1-3blnb40782us5dh71swqb9j633ueozsqn5pstu4j5vb9vznrz0-3imvy2pcvd0aiqf1b2jjjx7j8 192.168.99.101:2377
+This node joined a swarm as a worker.
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/23.JPG)
+
+Si entramos por ssh en el nodo *m1* podemos ver que *m2* ya esta añadido.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/24.JPG)
+
+Estos últimos pasos los realizamos también para *m3* y *m4*
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/25.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/26.JPG)
+
+Entramos de nuevo en el nodo *m1* y vemos que ya están todos los nodos añadidos como si fuera un único nodo, sabiendo por el * que aparece junto a su identificador y por el estatus que el principal es **m1**
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/27.JPG)
+
+Una vez tenemos todos los nodos activos y añadidos al cluster, vamos a lanzar un servicio web con 4 replicas que se distribuyen entre los 4 nodos que hemos creado.
+
+```bash
+docker@m1:~$ docker service create --name web --replicas 4 --mount type=bind,src=/etc/hostname,dst=/usr/share/nginx/html/index.html,readonly --publish published=8080,target=80 nginx
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/28.JPG)
+
+Si ejecutamos el comando curl desde por ejemplo el nodo m1, veremos que cada vez responde un servidor a la petición web.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/29.JPG)
+
+Podemos comprobar que el servicio ha lanzado 4 contenedores, uno en cada nodo.
+
+```bash
+docker@m1:~$ docker service ps web
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/30.JPG)
+
+Podemos reducir o ampliar el número de nodos para escalar nuestra granja web con:
+
+```bash
+docker@m1:~$ docker service scale web=2
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/31.JPG)
+
+Esto hace que nuestra granja web sea escalable. Podemos tener varias máquinas configuradas y añadidas a la granja y que el sistema funcione con 2 nodos únicamente y en los momentos en los que se prevea un incremento en el número de peticiones podemos escalar hasta 4 el número de nodos con la arquitectura que tenemos montada en este momento.
+
+Para comprobar la alta disponibilidad de la granja web vamos a parar uno de los nodos simulando que está en mantenimiento por algún motivo, o incluso que tiene algún problema de hardware y se ha apagado.
+
+```bash
+$  docker-machine stop m3
+```
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/32.JPG)
+
+Comprobamos de nuevo con curl que la granja web sigue funcionando y que no ha visto interrumpida su disponibilidad debido a que el nodo m3 no esté funcionando.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/33.JPG)
