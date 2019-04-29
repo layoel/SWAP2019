@@ -29,6 +29,8 @@ Son conceptos similares, pero un contenedor es más ligero. Una máquina virtual
 
 Los contenedores Docker se parecen a las máquinas virtuales porque encapsulan dentro del contenedor los recursos más básicos que no cambian de un ordenador a otro y los aspectos más específicos del sistema que pueden dar más problemas a la hora de llevar el software de un lado a otro.
 
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/13.png)
+
 ### Elementos básicos de Docker
 
 - **Imágenes**: Es una plantilla que contiene el estado de un contenedor. Digamos que podría ser como un snapshot de una máquina virtual. Por ejemplo, nosotros usaremos para montar la granja web una imágen con ubuntu y apache y otra imagen con ubuntu y nginx. 
