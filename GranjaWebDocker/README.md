@@ -54,7 +54,7 @@ En la [documentación de docker](https://docs.docker.com/engine/reference/builde
 
 ### [Docker Machine, Docker compose y Docker Swarm.](https://blog.codeship.com/docker-machine-compose-and-swarm-how-they-work-together/)
 
-- **Docker Machine**: Esta herramienta nos ayuda a crear contenendores en plataformas de virtualización como: VMware, VirtualBox y en otras plataformas como AWS, Azure, DigitalOcean, Exoscale, Google Compute Engine, OpenStack, SpofLayer, VMware vSphere y vCloud Aire.
+- **Docker Machine**: Esta herramienta nos ayuda a crear contenendores en plataformas de virtualización como: VMware, VirtualBox y en otras plataformas como AWS, Azure, DigitalOcean, Exoscale, Google Compute Engine, OpenStack, SpofLayer, VMware vSphere y vCloud Aire. Para instalar docker machine podemos seguir [este tutorial](https://docs.docker.com/machine/install-machine/), de la web oficial de docker.
 
 - **Docker Compose**: Con esta herramienta podemos gestionar varios contenedores que funcionan en conjunto. Con Docker Compose podemos administrar los contenedores con un archivo de configuración que se llama *docker-compose.yml* donde determinaremos como estarán vinculados los contenedores, los puertos que deben estar expuestos al usuario final... Un ejemplo del fichero mencionado anteriormente podria ser:
 ```Bash
@@ -85,15 +85,10 @@ services:
 volumes:
  db_data
 ```
+En el que hemos creado un entorno de wordpress basado en una base de datos MySQL y el propio Wordpress.
+Docker Compose nos permite crear soluciones más complejas que requieren de multiples aplicaciones.
 
-
-
-
-
-
-
-
-
+- **Docker Swarm**: Esta herramienta, nos permite distribuir contenedores entre distintas máquinas de forma que pueda distribuirse la ejecución. Esta característica hace que sea la herramienta mas interesante de las que dispone docker. Podemos crear agrupaciones de contenedores ya agrupados anteriormente, es decir, con esto podemos crear clusteres de contenedores con las aplicaciones que necesitemos. 
 
 ## Instalación de Docker
 Para realizar la instalación de Docker vamos a seguir el tutorial de [esta página](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-16-04-es)
