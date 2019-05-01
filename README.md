@@ -82,6 +82,11 @@ Donde:
 	- [df](https://linux.die.net/man/1/df)
 	- [iotop](https://linux.die.net/man/1/iotop)
 
+	**Top, htop** y **dstat** permiten visualizar la carga de cpu, el uso de memoria, la informacion de procesos etc.
+	**Ps** muestra información detallada de los procesos de sistema, se puede filtrar por suuarios y detalles de los procesos.Las opciones mas usuales de utilizar pueden ser aux o fax , indicando la opción a junto con x para incluir todos los procesos, y las opciones f y u que se utilizan para seleccionar la visualización en árbol o detallada, respectivamente.
+	
+
+
 - [Monitorización de un servidor Linux: Aplicaciones de interfaz web](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- cacti
 	- munin
