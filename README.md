@@ -47,11 +47,11 @@ Donde:
 
 	- [*Symfony 4*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.
 	- [*Laravel*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): Este framework es conocido por su sintaxis que es fácil de entender y fácil para trabajar con ella. El núcleo de Laravel es sólido desde el punto de vista del rendimiento y se puede ampliar usando muchas extensiones. Se integra con otras bibliotecas y plataformas como AWS para crear aplicaciones altamente escalables. Se puede ejecutar de forma asincrona y eso hace que aumente el rendimiento. Además tiene integradas funciones para manejar el enrutamiento, la administración de usuarios y el almacenamiento caché.
-	- [*CakePHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
-	- [*CodeIgniter*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*CakePHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): fue el primer framework en salir al mercado con el tipo de arqiutectura de modelo vista controlador. Tiene bibliotecas que incluyen cantidad de componentes útiles, esto hace que puedas programar proyectos más rápidamente.
+	- [*CodeIgniter*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): Es un framework PHP que usa una arquitectura de modelo vista controlador. Usa diferentes componentes para manejar tareas de desarrollo específicas. Usa un framework ligero pensado para mejorar el rendimiento, tiene una documentación que hace fácil su uso.
 	- [*Phalcon*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
-	- [*Yii*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
-	- [*FuelPHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*Yii*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): yes it is!, sobresale en comparación con otros porque es muy fácil instalarlo. Ayuda con sus componentes adicionales a acelerar el desarrollo de aplicaciones web. Tiene un conjunto de caracteristicas de seguridad que hace que tus aplicaciones y tus proyectos sean altamente seguros.
+	- [*FuelPHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/):
 - Frameworks para web con Python:
 	- [*Django*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
 	- [*Pyramid*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a)
