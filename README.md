@@ -106,6 +106,11 @@ Donde:
 		- Gestión de ancho de banda
 		- Automatización de servicio utilizando REST API
 		- Appliance NFV para la entrega de aplicaciones 
+	- [Zevenet](https://www.zevenet.com/) (visto en clase)
+	- [Haproxy](https://www.redeszone.net/2014/10/25/haproxy-un-balanceador-de-cargas-tcphttp-gratuito/) (visto en clase)
+	- [Nginx](https://picodotdev.github.io/blog-bitix/2016/07/configurar-nginx-como-balanceador-de-carga/) (visto en clase)
+	- [Pound](https://linuxtechlab.com/load-balancing-web-servers-using-pound-load-balancer/) (hecha práctica opcional en la práctica de balanceadores)
+	- [Pen](http://blog.capacityacademy.com/2014/06/17/montando-balanceador-de-carga-en-linux-centos/): es una balanceador de carga simple que nos permitirá tener varios servidores en línea proveyendo un servicio y que aparezcan como uno públicamente. Es capaz de detectar los servidores que no están disponibles y distribuir la carga entre los que están, dándonos alta disponibilidad y rendimiento escalable. Cuenta con varias características y podemos implementarlo en una máquina virtual o en una maquina sin muchos recursos reduciendo el costo de implementación.
 
 - Balanceadores de carga hardware:
 	- [Barracuda](https://www.barracuda.com/products/loadbalancer): solución Enterprise Ready a un muy buen precio.  Ideal para optimizar el rendimiento de las aplicaciones. Libera al servidor de transacciones SSL que consumen muchos recursos, lo que permite conservar recursos para las aplicaciones. Además, las funciones de optimización como el almacenamiento en caché, la compresión y la agrupación de TCP permiten una entrega de aplicaciones más rápida y garantizan la flexibilidad. Además de las funcionalidades estándar incluye prevención de intrusiones IPS, no IDS.
@@ -121,6 +126,11 @@ Donde:
 ### Buscar productos comerciales para servidores de aplicaciones.
 
 - Servidores de aplicaciones: 
+	- [Apache Tomcat](https://www.charliejsanchez.com/2018/03/04/balanceadores-de-carga-con-haproxy-apache2-y-nginx/): ofrece una implementación libre de Java Servlet, JavaServer Pages, Java WebSocket, etc. para poder crear un servidor de aplicaciones, tanto para Windows como para Linux.
+	- [ Microsoft Internet Information Services (IIS)](https://www.ibm.com/support/knowledgecenter/es/SSAW57_9.0.0/com.ibm.websphere.nd.multiplatform.doc/ae/tins_manualWebIIS.html)
+	- [IBM WebSphere Application Server](https://www.ibm.com/support/knowledgecenter/es/ssw_ibm_i_73/rzahg/rzahgebappserv.htm):  es la implementación por parte de IBM de la plataforma Java Platform, Enterprise Edition (Java EE). WebSphere Application Server está disponible en paquetes exclusivos que están diseñados para cumplir una amplia gama de requisitos de cliente. En el centro de cada paquete hay un WebSphere Application Server que proporciona el entorno de ejecución para aplicaciones empresariales.
+	- [Oracle IAS](https://www.adictosaltrabajo.com/2006/06/02/ias/): un sistema integrado, basado en los estándares software como plataforma.  Implementa aplicaciones basadas en Java EE. 
+	- [Borland AppServer](https://www.computerweekly.com/feature/Borland-AppServer-45): es una implementación de alto rendimiento de un servidor de aplicaciones compatible con Java 2 Enterprise Edition (J2EE). Es uno de los primeros productos que han pasado el proceso de certificación J2EE de Sun.
 
 ### Buscar productos comerciales para servidores de almacenamiento.
 
