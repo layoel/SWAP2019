@@ -240,6 +240,8 @@ En la imagen siguiente podemos ver un resumen de los códigos anteriores.
 
 ![Imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/35.JPG)
 
+Yo creo que los que se pueden usar para GSLB son el 301,307 y 308 porque te permiten redirigir a otra web.
+
 ## Ejercicio 4.7 
 
 ### Buscar información sobre los bloques de IP para los distintos países o continentes
