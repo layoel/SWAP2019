@@ -89,6 +89,7 @@ Donde:
 - [Monitorización de infraestructuras](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- Nagios
 	- Zabix
+	
 	Ambas nos permiten controlar tanto los servicios de red como los recursos hardware de los equipos, pudiendo ampliar dichas funcionalidades gracias a plugins y scripts proporcionados por nosotros. Tienen sistemas de alertas que nos permiten indicar varios niveles de alerta a diferentes medios dependiendo del tiempo que pase la incidencia activa, así como programar acciones para intentar solventar la incidencia de forma automática.
 
 ## Ejercicio 2.4
