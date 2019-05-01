@@ -197,6 +197,9 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 ## Ejercicio 3.2 
 ### Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.
 
+- En linux: se usa iptables, no pongo ejemplos porque me remito a la práctica de este tema donde usamos iptables para bloquear o permitir paquetes desde ips concretas o de algun protocolo concreto o bloquear todo el tráfico etc.
+- En windows: Se puede usar el firewall de windows. En [esta web](https://www.itprotoday.com/security/packet-filtering-and-windows) podemos ver las opciones que hay de filtrado.
+
 ----------------------------------------------------------------------
 # Tema4
 
