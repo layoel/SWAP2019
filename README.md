@@ -93,9 +93,38 @@ Donde:
 
 ## Ejercicio 2.4
 ### Buscar ejemplos de balanceadores software y hardware (productos comerciales).
+
+- Balanceadores de carga software:
+	- [Brocade](https://gigas.com/balanceador.html): 
+		-Entrega de Aplicaciones y solución de Balanceador de Carga diseñados especialmente para la Virtualización de Funciones de Red de alto rendimiento (NFV)
+		- Balanceo de carga inteligente
+		- Aceleración de aplicaciones
+		- Almacenamiento en caché de contenido dinámico
+		- Descarga SSL y de compresión
+		- Monitorización de nivel de servicio
+		- Balanceo de carga global
+		- Gestión de ancho de banda
+		- Automatización de servicio utilizando REST API
+		- Appliance NFV para la entrega de aplicaciones 
+
+- Balanceadores de carga hardware:
+	- [Barracuda](https://www.barracuda.com/products/loadbalancer): solución Enterprise Ready a un muy buen precio.  Ideal para optimizar el rendimiento de las aplicaciones. Libera al servidor de transacciones SSL que consumen muchos recursos, lo que permite conservar recursos para las aplicaciones. Además, las funciones de optimización como el almacenamiento en caché, la compresión y la agrupación de TCP permiten una entrega de aplicaciones más rápida y garantizan la flexibilidad. Además de las funcionalidades estándar incluye prevención de intrusiones IPS, no IDS.
+	- [F5](https://f5.com/glossary/load-balancing-101): Los F5 BIG-IP Load Traffic Manager (LTM), son otro de los clásicos en el mundo del balanceo de carga. Fáciles de usar y optimizados para trabajar sobre la WAN.
+	- [CISCO](https://www.ovh.com/world/dedicated-servers/ace_load_balancing.xml) 
+		- Tráfico de balanceo de carga en HTTP, FTP, DNS, SIP, RTSP, POP / IMAP, etc.
+		- Tráfico SSL.
+		- Permite asignar pesos para cada uno de sus servidores o VM
+		- Configurar sensores de monitoreo
+		- Gestión de NAT / DNAT para el rack virtual
+		- Ver rendimiento con SNMP.
+
 ### Buscar productos comerciales para servidores de aplicaciones.
+
+- Servidores de aplicaciones: 
+
 ### Buscar productos comerciales para servidores de almacenamiento.
 
+- Servidores de almacenamiento:
 --------------------------------------------------------
 
 # Tema3
