@@ -238,7 +238,7 @@ Los [códigos de estado http](https://diego.com.es/redirecciones-http) para redi
 
 En la imagen siguiente podemos ver un resumen de los códigos anteriores.
 
-![](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/35.png)
+![Imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/35.png)
 
 ## Ejercicio 4.7 
 
