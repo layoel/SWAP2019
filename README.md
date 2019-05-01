@@ -145,9 +145,9 @@ Donde:
 ## Ejercicio 5.3 
 ### Buscar información sobre características, funcionalidad, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
 
-- top
-- vmstat
-- netstat
+-  [top](https://linux.die.net/man/1/top):**Top, htop** y **dstat** permiten visualizar la carga de cpu, el uso de memoria, la informacion de procesos etc.
+- [vmstat](https://www.solvetic.com/tutoriales/article/6174-como-usar-comando-vmstat-linux/): La herramienta vmstat ha sido desarrollada con el fin de brindar información a los administradores sobre procesos, memoria, paginación, E/S de bloque, actividad de la CPU, número de cambios de contexto, interrupciones de dispositivo y llamadas del sistema con el fin de acceder a los mejores detalles de control.
+- [netstat](https://www.nerion.es/soporte/tutoriales/entendiendo-el-manejo-de-netstat/): Es una utilidad para conocer las conexiones establecidas entre nuestro PC y el exterior. Permite  entre varias cosas conocer la actividad de nuestra red, nos muestra que puertos de nuestro PC (netstat puertos), se encuentran abiertos y si son usados en alguna conexión desconocida. Permitiéndonos cerrarlos, si no los necesitamos.
 
 ----------------------------------------------------------------------
 # Tema6
