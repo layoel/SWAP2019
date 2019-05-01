@@ -227,6 +227,19 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 
 ### Probar las diferentes maneras de redirección HTTP. ¿Cuál es adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?
 
+Los [códigos de estado http](https://diego.com.es/redirecciones-http) para redirecciones está regulados en el RFC7231. 
+
+- **300 multiple choices**
+- **301 moved permanently**
+- **302 found**
+- **303 see other**
+- **307 temporary redirect**
+- **308 permanent redirect**
+
+En la imagen siguiente podemos ver un resumen de los códigos anteriores.
+
+!(https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/35.png)
+
 ## Ejercicio 4.7 
 
 ### Buscar información sobre los bloques de IP para los distintos países o continentes
