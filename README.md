@@ -231,6 +231,8 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 
 ### Buscar información sobre los bloques de IP para los distintos países o continentes
 
+He encontrado una página donde ordena las ips por paises. Es [esta](https://lite.ip2location.com/ip-address-ranges-by-country) si entras dentro de cada país obtienes el listado de direcciones ip y al final de ese listado te aparece para que puedas descargarlo en CSV por si necesitas que la información esté accesible para trabajar con ella. En [esta](https://www.xmyip.com/ip-blocks-countries) otra web al acceder nos da un poco mas de información que en la web anterior, señala los rangos y el estado o región al que está asignado incluso hay una columna para la ciudad.
+
 ## Ejercicio 4.8
 
 ### Buscar información sobre métodos y herramientas para implementar GSLB.
