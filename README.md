@@ -134,7 +134,19 @@ Donde:
 
 ### Buscar productos comerciales para servidores de almacenamiento.
 
-- Servidores de almacenamiento:
+- [Servidores de almacenamiento](https://www.xataka.com/otros-dispositivos/guia-de-compra-de-nas-multimedia-en-que-debes-fijarte-y-cuales-son-los-mejores-modelos):
+	- [NAS](https://gouforit.com/10-mejores-servidores-nas/)
+		- Sygnology
+		- Qnap
+		- Western Digital
+		- Netgear
+		- D-link
+		- iomega
+	- [SAN](https://www.netapp.com/es/info/what-is-storage-area-network.aspx): Las siglas SAN significan Storage Area Network, en español significan redes de área de almacenamiento. Ésta es la arquitectura de redes de almacenamiento más común que utilizan las empresas para que sus aplicaciones más relevantes alcancen un alto rendimiento y una baja latencia. Un almacenamiento SAN se basa en bloques y saca partido de una arquitectura de alta velocidad que conecta los servidores con sus unidades de disco lógicas (LUN). Una LUN es una variedad de bloques que se aprovisionan desde un grupo de almacenamiento compartido y se presentan al servidor como un disco lógico. El servidor divide y da formato a esos bloques (por lo general, con un sistema de archivos) para que se puedan almacenar datos en la LUN igual que se haría en el disco local.
+	- [DAS](https://espai.stucom.com/tecnologia/sistemas-de-almacenamiento-das-nas-san/): Almacenamiento directamente conectado. Es el tipo de almacenamiento tradicional. Un disco duro de un servidor, conectado a su placa base mediante una controladora de disco integrada es el ejemplo más representativo de un sistema DAS. El sistema operativo accede al almacenamiento mediante bloques, el sistema operativo es el encargado de poner en ese disco particiones y sistemas de ficheros, para poder almacenar carpetas u ficheros en él.
+		- Infortrend
+		- Chenbro
+
 --------------------------------------------------------
 
 # Tema3
@@ -177,6 +189,8 @@ Donde:
 
 ## Ejercicio 5.1
 ### Buscar información sobre cómo calcular el número de conexiones por segundo.
+
+
 
 ## Ejercicio 5.2
 ### Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP… o en la red de casa
