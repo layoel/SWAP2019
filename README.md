@@ -83,12 +83,13 @@ Donde:
 	- [iotop](https://linux.die.net/man/1/iotop): Si lo que queremos visualizar es el I/O del disco, este comando nos muestra los procesos del sistema y su trabajo de interrupción en el disco.
 
 - [Monitorización de un servidor Linux: Aplicaciones de interfaz web](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
-	- cacti
-	- munin
-	- collectd
+	- [cacti](https://hipertextual.com/archivo/2010/09/monitoriza-el-estado-de-tu-red-con-cacti/): permite monitorizar y visualizar gráficas y estadísticas de dispositivos conectados a una red y que tengan habilitado el protocolo SNMP, ya sea un switch, un router o un servidor Linux.
+	- [munin](https://www.ecured.cu/Sistema_de_monitoreo_Munin) : Es una herramienta multiplataforma basada en web, utilizada en el monitoreo de los recursos en red. Permite monitorizar muchos parámetros y visualizarlos en cómodas gráficas. Toda la información generada puede verse a través de la web desde cualquier parte. Está implementado en Perl y liberado bajo licencia GPL.
+	- [collectd](https://www.elarraydejota.com/monitorizando-el-sistema-con-collectdinfluxdbgrafana-debian/): Es un servicio que recolecta datos del sistema operativo y de las aplicaciones, generando métricas periódicas y suministrando mecanismos para almacenar dichos datos, en registros o arrays.
 - [Monitorización de infraestructuras](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- Nagios
 	- Zabix
+	Ambas nos permiten controlar tanto los servicios de red como los recursos hardware de los equipos, pudiendo ampliar dichas funcionalidades gracias a plugins y scripts proporcionados por nosotros. Tienen sistemas de alertas que nos permiten indicar varios niveles de alerta a diferentes medios dependiendo del tiempo que pase la incidencia activa, así como programar acciones para intentar solventar la incidencia de forma automática.
 
 ## Ejercicio 2.4
 ### Buscar ejemplos de balanceadores software y hardware (productos comerciales).
