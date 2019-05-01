@@ -70,17 +70,17 @@ Donde:
 ### ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas. ...¡o recordar cómo usarlas!
 
 - [Monitorización de servidor linux por consola](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
-	- top
-	- htop
-	- dstat
-	- ps
-	- lsof
-	- netsat
-	- route
-	- iptraf
-	- iftop
-	- df
-	- iotop
+	- [top](https://linux.die.net/man/1/top)
+	- [htop](https://linux.die.net/man/1/htop)
+	- [dstat](https://linux.die.net/man/1/dstat)
+	- [ps](http://linuxcommand.org/lc3_man_pages/ps1.html)
+	- [lsof](https://linux.die.net/man/8/lsof)
+	- [netstat](https://linux.die.net/man/8/netstat)
+	- [route](https://linux.die.net/man/8/route)
+	- [iptraf](https://linux.die.net/man/8/iptraf)
+	- [iftop](https://linux.die.net/man/8/iftop)
+	- [df](https://linux.die.net/man/1/df)
+	- [iotop](https://linux.die.net/man/1/iotop)
 
 - [Monitorización de un servidor Linux: Aplicaciones de interfaz web](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- cacti
