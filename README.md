@@ -70,22 +70,17 @@ Donde:
 ### ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas. ...¡o recordar cómo usarlas!
 
 - [Monitorización de servidor linux por consola](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
-	- [top](https://linux.die.net/man/1/top)
+	- [top](https://linux.die.net/man/1/top):**Top, htop** y **dstat** permiten visualizar la carga de cpu, el uso de memoria, la informacion de procesos etc.
 	- [htop](https://linux.die.net/man/1/htop)
 	- [dstat](https://linux.die.net/man/1/dstat)
-	- [ps](http://linuxcommand.org/lc3_man_pages/ps1.html)
-	- [lsof](https://linux.die.net/man/8/lsof)
-	- [netstat](https://linux.die.net/man/8/netstat)
-	- [route](https://linux.die.net/man/8/route)
-	- [iptraf](https://linux.die.net/man/8/iptraf)
-	- [iftop](https://linux.die.net/man/8/iftop)
-	- [df](https://linux.die.net/man/1/df)
-	- [iotop](https://linux.die.net/man/1/iotop)
-
-	**Top, htop** y **dstat** permiten visualizar la carga de cpu, el uso de memoria, la informacion de procesos etc.
-	**Ps** muestra información detallada de los procesos de sistema, se puede filtrar por suuarios y detalles de los procesos.Las opciones mas usuales de utilizar pueden ser aux o fax , indicando la opción a junto con x para incluir todos los procesos, y las opciones f y u que se utilizan para seleccionar la visualización en árbol o detallada, respectivamente.
-	
-
+	- [ps](http://linuxcommand.org/lc3_man_pages/ps1.html): muestra información detallada de los procesos de sistema, se puede filtrar por suuarios y detalles de los procesos.Las opciones mas usuales de utilizar pueden ser aux o fax , indicando la opción a junto con x para incluir todos los procesos, y las opciones f y u que se utilizan para seleccionar la visualización en árbol o detallada, respectivamente.
+	- [lsof](https://linux.die.net/man/8/lsof): permite mostrar los ficheros abiertos asociados tanto a procesos como a servicios (sockets, tuberías, etc). Si ejecutamos lsof sobre un fichero o directorio, podremos ver si éste esta siendo ocupado por algún proceso.
+	- [netstat](https://linux.die.net/man/8/netstat): herramienta para monitorizar el estado de nuestra red. Para saber el estado de las conexiones.
+	- [route](https://linux.die.net/man/8/route): herramienta para monitorizar el estado de nuestra red. Para analizar las tablas de rutas.
+	- [iptraf](https://linux.die.net/man/8/iptraf): herramienta para monitorizar el estado de nuestra red.
+	- [iftop](https://linux.die.net/man/8/iftop): herramienta para monitorizar el estado de nuestra red.
+	- [df](https://linux.die.net/man/1/df):  Para visualizar el uso del disco.
+	- [iotop](https://linux.die.net/man/1/iotop): Si lo que queremos visualizar es el I/O del disco, este comando nos muestra los procesos del sistema y su trabajo de interrupción en el disco.
 
 - [Monitorización de un servidor Linux: Aplicaciones de interfaz web](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- cacti
