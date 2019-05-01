@@ -59,12 +59,11 @@ Donde:
 	- [*Bottle*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a): Se pensó originalmente para crear API, lo implementa todo en un solo archivo fuente. No tiene dependencias aparte de la biblioteca estandar de python. Sus características principales incluyen enrutamiento, plantillas, utilidades y una abstracción básica sobre el estandar WSGI.
 	- [*Tornado*](https://hackernoon.com/top-10-python-web-frameworks-to-learn-in-2018-b2ebab969d1a):Usa una red de Entrada/salida no bloqueante y puede manejar mas de 10.000 conexiones simultáneas correctamente. Sus características principales son: servicios en tiempo real, rendimiento de alta calidad, lenguaje de plantillas web basado en python, cliente HTTP sin bloqueo entre otras.
 - [Frameworks para web con java](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
-	- [*Spring MVC*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
-	- [*Struts 2*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
-	- [*Hibernate*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):
-	- [*Vaadin*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
-	- [*Goggle Web Toolkit*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
-	- [*Grails*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/)
+	- [*Spring MVC*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/): Ofrece una amplia gama e servicios como son API REST, servicios web SOAP, seguridad... Tiene una gran comunidad de desarrolladores que trabajan con el y tiene una documentación muy buena. Es una herramienta muy poderosa para el desarrollo de aplicaciones web y de proyectos de seguridad.
+	- [*Struts 2*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/): Tiene un conjunto de herramientas para crear aplicaciones web orientadas a epmresas que optimizan el proceso de desarrollo de principio a fin y el mantenimiento posterior.
+	- [*Hibernate*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/): Las características de este software ayudan a los desarrolladores back-end a acceder a los datos. Este framework permite realiar opreaciones en la base de datos de objetos Java.
+	- [*Goggle Web Toolkit*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/): Permite a los programadores crear y optimizar sofisticadas aplicaciones basadas en la web . El kit de desarrollo de software GWT ofrece APIs Java y widgets básicos para la construcción de aplicaciones compiladas después de aplicarles JavaScript.
+	- [*Grails*](https://openwebinars.net/blog/los-7-mejores-frameworks-de-java/):  es considerado como una herramienta dinámica que mejora la productividad de los ingenieros debido a sus APIs, a sus valoress por defecto. Tiene un conjunto de herramientas poderosas, tales como la inyección de dependencia Spring-powered y diversos complementos, que ofrecen todo lo necesario para crear modernas aplicaciones web.
 
 ## Ejercicio 2.3
 ### ¿Cómo analizar el nivel de carga de cada uno de los subsistemas en el servidor? Buscar herramientas y aprender a usarlas. ...¡o recordar cómo usarlas!
@@ -89,7 +88,7 @@ Donde:
 - [Monitorización de infraestructuras](https://openwebinars.net/blog/3-formas-de-monitorizar-servidores-linux/)
 	- Nagios
 	- Zabix
-	
+
 	Ambas nos permiten controlar tanto los servicios de red como los recursos hardware de los equipos, pudiendo ampliar dichas funcionalidades gracias a plugins y scripts proporcionados por nosotros. Tienen sistemas de alertas que nos permiten indicar varios niveles de alerta a diferentes medios dependiendo del tiempo que pase la incidencia activa, así como programar acciones para intentar solventar la incidencia de forma automática.
 
 ## Ejercicio 2.4
