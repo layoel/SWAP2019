@@ -208,38 +208,48 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 ### Buscar información sobre cuánto costaría en la actualidad un mainframe que tuviera las mismas prestaciones que una granja web con balanceo de carga y 10 servidores finales (p.ej).
 
 ## Ejercicio 4.2
+
 ### Buscar información sobre precio y características de balanceadores comerciales (hardware) específicos. Compara las prestaciones que ofrecen unos y otros.
 
 ## Ejercicio 4.3
+
 ### Instala y configura en una máquina virtual el balanceador ZenLoadBalancer. Compara con la dificultad de la instalación y configuración usando nginx o haproxy (práctica 3).
 
 ## Ejercicio 4.4 
+
 ### Implementar un pequeño servicio web en los servidores finales que devuelva el % CPU y % RAM que en un instante tiene en uso dicho servidor. Lo debe devolver como una cadena de texto plano que representa ambos porcentajes, p.ej: “CPU 45% RAM 76%”
 
 ## Ejercicio 4.5
+
 ### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2 (o el software que hemos propuesto para la práctica 3).
 
 ## Ejercicio 4.6 
+
 ### Probar las diferentes maneras de redirección HTTP. ¿Cuál es adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?
 
 ## Ejercicio 4.7 
+
 ### Buscar información sobre los bloques de IP para los distintos países o continentes
 
 ## Ejercicio 4.8
+
 ### Buscar información sobre métodos y herramientas para implementar GSLB.
 
 ----------------------------------------------------------------------
 # Tema5
 
 ## Ejercicio 5.1
+
 ### Buscar información sobre cómo calcular el número de conexiones por segundo.
 
 
 
 ## Ejercicio 5.2
+
 ### Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP… o en la red de casa
 
 ## Ejercicio 5.3 
+
 ### Buscar información sobre características, funcionalidad, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
 
 -  [top](https://linux.die.net/man/1/top):**Top, htop** y **dstat** permiten visualizar la carga de cpu, el uso de memoria, la informacion de procesos etc.
