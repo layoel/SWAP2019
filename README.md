@@ -46,7 +46,7 @@ Donde:
 - [Frameworks para desarrollo web con PHP](https://www.wearemarketing.com/es/blog/frameworks-en-el-desarrollo-web-las-mejores-practicas-para-tu-negocio-online.html#):
 
 	- [*Symfony 4*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): Es el preferido por muchos desarrolladores web. Está compuesto por componentes que se pueden reutilizar y tiene una comunidad activa que expone nuevos códigos para el desarrollo de mejoras en actualizaciones. Tiene licencia libre, te da la capacidad de controlar accesos a la informacion, permite la creación de app en distintos idiomas, la facilidad de uso de su arquitectura y los diseños comprensibles y fáciles de usar para los desarrolladores web hacen que el código de este framework sea de calidad.
-	- [*Laravel*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
+	- [*Laravel*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/): Este framework es conocido por su sintaxis que es fácil de entender y fácil para trabajar con ella. El núcleo de Laravel es sólido desde el punto de vista del rendimiento y se puede ampliar usando muchas extensiones. Se integra con otras bibliotecas y plataformas como AWS para crear aplicaciones altamente escalables. Se puede ejecutar de forma asincrona y eso hace que aumente el rendimiento. Además tiene integradas funciones para manejar el enrutamiento, la administración de usuarios y el almacenamiento caché.
 	- [*CakePHP*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
 	- [*CodeIgniter*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
 	- [*Phalcon*](https://www.hostinger.es/tutoriales/mejores-frameworks-php/)
