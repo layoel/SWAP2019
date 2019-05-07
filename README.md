@@ -195,6 +195,7 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 
 
 ## Ejercicio 3.2 
+
 ### Buscar con qué órdenes de terminal o herramientas gráficas podemos configurar bajo Windows y bajo Linux el filtrado y bloqueo de paquetes.
 
 - En linux: se usa iptables, no pongo ejemplos porque me remito a la práctica de este tema donde usamos iptables para bloquear o permitir paquetes desde ips concretas o de algun protocolo concreto o bloquear todo el tráfico etc.
@@ -226,18 +227,6 @@ El precio no aparece en su propia web pero buscando en otras web he encontrado l
 - [Barracuda Load Balancer ADC 640](https://www.firewalls.com/products/wan-accelerator/barracuda-load-balancer/640) $10,971.46
 - [Barracuda Load Balancer ADC 841](https://www.zones.com/site/product/index.html?id=101081443) $8,000.99
 - [Barracuda Load Balancer ADC 841](https://www.barraguard.co.uk/840-ADC-10GbE-Copper.asp) £22,867.90
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Ejercicio 4.3
 
