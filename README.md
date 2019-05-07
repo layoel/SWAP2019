@@ -218,10 +218,14 @@ Uno de los Balanceadores Hardware de los que hablamos en clase es Barracuda, asÃ
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/10.JPG)
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/11.JPG)
 
+El precio no aparece en su propia web pero buscando en otras web he encontrado los siguientes precios:
 
-
-
-
+- [Barracuda Load Balancer 240](https://www.cnet.com/products/barracuda-load-balancer-240-load-balancing-device-series/) $1,924.49
+- [Barracuda Load Balancer ADC 440](https://www.cnet.com/products/barracuda-load-balancer-440-load-balancing-device-series/) $5,451.66
+- [Barracuda Load Balancer ADC 540](https://www.zones.com/site/product/index.html?id=101081443) $8,000.99
+- [Barracuda Load Balancer ADC 640](https://www.firewalls.com/products/wan-accelerator/barracuda-load-balancer/640) $10,971.46
+- [Barracuda Load Balancer ADC 841](https://www.zones.com/site/product/index.html?id=101081443) $8,000.99
+- [Barracuda Load Balancer ADC 841](https://www.barraguard.co.uk/840-ADC-10GbE-Copper.asp) Â£22,867.90
 
 
 
