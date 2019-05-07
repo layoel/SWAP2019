@@ -255,7 +255,6 @@ Si comparamos la configuración con la que hicimos en nginx en haproxy o en poun
 ### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2 (o el software que hemos propuesto para la práctica 3).
 
 Los métodos de balanceo del software de la práctica 3 para **[Nginx](http://nginx.org/en/docs/http/load_balancing.html)** son:
- 
 	- *Round Robin*: una petición por cada servidor. Se suele usar cuando todos los equipos que montan la web son de identicas características, para que ninguno de los servidores esté sobrecargado y todos tarden lo mismo en responder a los clientes.
 	- *IP Hash*: crea un hash de la direccion ip, con los 3 primeros bytes de la IP. Esa función hash se usa para determinar que servidor debe seleccionar para la siguiente solicitud dependiendo de la IP del cliente que realiza la petición.
 	- *Menos conectado*: el servidor que ha tenido menos conexiones activas es al servidor al que va a mandar la petición nueva.
