@@ -250,15 +250,18 @@ Una vez hemos accedido al interfaz web, es facil crear una granjaweb desde el ap
 Si comparamos la configuración con la que hicimos en nginx en haproxy o en pound la verdad la de zevenet al ser por web es más intuitiva, más comodo y menos propensa a errores en la configuración bajo mi punto de vista.
 
 
-## Ejercicio 4.4 
-
-### Implementar un pequeño servicio web en los servidores finales que devuelva el % CPU y % RAM que en un instante tiene en uso dicho servidor. Lo debe devolver como una cadena de texto plano que representa ambos porcentajes, p.ej: “CPU 45% RAM 76%”
-
-## Ejercicio 4.5
+## Ejercicio 4.4
 
 ### Buscar información sobre los métodos de balanceo que implementan los dispositivos recogidos en el ejercicio 4.2 (o el software que hemos propuesto para la práctica 3).
 
-## Ejercicio 4.6 
+Los métodos de balanceo del software de la práctica 3 para **[Nginx](http://nginx.org/en/docs/http/load_balancing.html)** son:
+ 
+	- *Round Robin*: una petición por cada servidor. Se suele usar cuando todos los equipos que montan la web son de identicas características, para que ninguno de los servidores esté sobrecargado y todos tarden lo mismo en responder a los clientes.
+	- *IP Hash*: crea un hash de la direccion ip, con los 3 primeros bytes de la IP. Esa función hash se usa para determinar que servidor debe seleccionar para la siguiente solicitud dependiendo de la IP del cliente que realiza la petición.
+	- *Menos conectado*: el servidor que ha tenido menos conexiones activas es al servidor al que va a mandar la petición nueva.
+
+
+## Ejercicio 4.5 
 
 ### Probar las diferentes maneras de redirección HTTP. ¿Cuál es adecuada y cuál no lo es para hacer balanceo de carga global? ¿Por qué?
 
@@ -277,15 +280,18 @@ En la imagen siguiente podemos ver un resumen de los códigos anteriores.
 
 Yo creo que los que se pueden usar para GSLB son el 301,307 y 308 porque te permiten redirigir a otra web.
 
-## Ejercicio 4.7 
+## Ejercicio 4.6 
 
 ### Buscar información sobre los bloques de IP para los distintos países o continentes
 
 He encontrado una página donde ordena las ips por paises. Es [esta](https://lite.ip2location.com/ip-address-ranges-by-country) si entras dentro de cada país obtienes el listado de direcciones ip y al final de ese listado te aparece para que puedas descargarlo en CSV por si necesitas que la información esté accesible para trabajar con ella. En [esta](https://www.xmyip.com/ip-blocks-countries) otra web al acceder nos da un poco mas de información que en la web anterior, señala los rangos y el estado o región al que está asignado incluso hay una columna para la ciudad.
 
-## Ejercicio 4.8
+## Ejercicio 4.7
 
 ### Buscar información sobre métodos y herramientas para implementar GSLB.
+
+Para implemenar un GSLB necesitamos tener nuestro centro de datos replicado en dos localizaciones distintas, sino no tiene sentido usar un GSLB. Partiendo de esa base, el propio Zevenet nos da la posibilidad de implementar un GSLB en [esta web](https://www.zevenet.com/es/base-de-conocimientos/howtos/c%C3%B3mo-funciona-el-servicio-global-de-equilibrio-de-carga-gslb/) explican detalladamente como hacerlo. Otra opción es usar el GSLB NetScaler de Citrix XenMobile aquí nos [explican como funciona y la configuración](https://docs.citrix.com/es-es/xenmobile/server/advanced-concepts/xenmobile-deployment/disaster-recovery.html). La plataforma Amazon Web Services también tiene su propio GSLB, es Elastic Load Balancing, en [esta web](https://docs.aws.amazon.com/es_es/codedeploy/latest/userguide/deployment-groups-create-load-balancer.html) explican la configuración.
+
 
 ----------------------------------------------------------------------
 # Tema5
