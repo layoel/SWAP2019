@@ -215,6 +215,30 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 
 ### Instala y configura en una máquina virtual el balanceador ZenLoadBalancer. Compara con la dificultad de la instalación y configuración usando nginx o haproxy (práctica 3).
 
+Primero descargo la imagen de [aqui](https://osdn.net/projects/zevenet/storage/zevenet-ce_v5.9.1-amd64.iso/)
+
+Para la instalación he seguido la [guia de instalación oficial](https://www.zevenet.com/es/base-de-conocimientos/Edici%C3%B3n-de-Empresa/Gu%C3%ADa-de-administraci%C3%B3n-de-la-edici%C3%B3n-empresarial-v3-04/Edici%C3%B3n-de-la-empresa-v3-04-gu%C3%ADa-de-instalaci%C3%B3n/)
+
+La instalación es sencilla
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/1.JPG)
+nos pide una dirección ip para nuestro balanceador, la mascara, la puerta de enlace y la dirección del servidor dns.
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/2.JPG)
+
+A continuación pide un nombre para el equipo y un nombre de dominio.
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/3.JPG)
+Seguimos con el particionamiento del disco y una vez terminado comienza la instalación
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/4.JPG)
+
+Una vez terminada la instalación iniciamos el sistema sin el disco de instalación. El usuario es root y la contraseña la que pusimos en la instalación
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/5.JPG)
+
+Para acceder a la configuración desde otra máquina podemos acceder a la web **https://192.168.80.15:444** donde nos pedira usuario y contraseña que es el mismo que en el apartado anterior
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/6.JPG)
+
+Una vez hemos accedido al interfaz web, es facil crear una granjaweb desde el apartado LSLB - Farms la creamos y en ese menu añadimos un nuevo servicio que llamamos web y en add backend añadimos las ips y los puertos de los servidores web que vamos a balancear.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/7.JPG)
+
 ## Ejercicio 4.4 
 
 ### Implementar un pequeño servicio web en los servidores finales que devuelva el % CPU y % RAM que en un instante tiene en uso dicho servidor. Lo debe devolver como una cadena de texto plano que representa ambos porcentajes, p.ej: “CPU 45% RAM 76%”
