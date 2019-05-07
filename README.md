@@ -211,6 +211,30 @@ Lo mismo con conexiones que lleguen a la IP 10.25.25.2 y puerto 33896, que reenv
 
 ### Buscar información sobre precio y características de balanceadores comerciales (hardware) específicos. Compara las prestaciones que ofrecen unos y otros.
 
+Uno de los Balanceadores Hardware de los que hablamos en clase es Barracuda, así que he buscado información en la web oficial del fabricante y nos deja comparar de 4 en 4 sus servidores y las características. En [esté enlace](https://www.barracuda.com/products/loadbalancer/models/compare/1?models=340,440,640,841) está la descripción y las características de los 4 que he seleccionado.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/8.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/9.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/10.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/11.JPG)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Ejercicio 4.3
 
 ### Instala y configura en una máquina virtual el balanceador ZenLoadBalancer. Compara con la dificultad de la instalación y configuración usando nginx o haproxy (práctica 3).
