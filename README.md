@@ -377,6 +377,18 @@ Lo que he hecho ha sido filtrar solo la tarjeta wireless para capturar el tráfi
 
 ## Ejercicio 6.1 
 ### Aplicar con iptables una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
+
+Este ejercicio lo realicé en la práctica 4:
+
+Primero **bloqueando todo el tráfico**.
+
+```bash
+elvira@:~m1$ sudo iptables -P INPUT DROP 
+elvira@:~m1$ sudo iptables -P OUTPUT DROP
+elvira@:~m1$ sudo iptables -P FORWARD DROP
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/12.JPG)
+
 ### Aplicar con iptables una política de permitir todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
 
 ## Ejercicio 6.2 
