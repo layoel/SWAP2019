@@ -335,5 +335,17 @@ Para implemenar un GSLB necesitamos tener nuestro centro de datos replicado en d
 # Tema6
 
 ## Ejercicio 6.1 
-### dfd
+### Aplicar con iptables una política de denegar todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
+### Aplicar con iptables una política de permitir todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
+
+## Ejercicio 6.2 
+### Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
+
+## Ejercicio 6.3 
+### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
+----------------------------------------------------------------------
+# Tema7
+
+## Ejercicio 7.1 
+### Buscar información sobre los sistemas de ficheros en red más utilizados en la actualidad y comparar sus características. Hacer una lista de ventajas e inconvenientes de todos ellos, así como grandes sistemas en los que se utilicen.
 ----------------------------------------------------------------------
