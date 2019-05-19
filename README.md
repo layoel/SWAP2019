@@ -345,10 +345,10 @@ http://192.168.80.133/nginx_status
 Para los servidores web que no usan nginx se puede hacer con el comando netstat y filtrando con grep. Por ejemplo:
 
 ```bash
-#vemos todas las coneziones activas al servidor web
+# vemos todas las coneziones activas al servidor web
 $ netstat -na
 
-# Si queremos saber todas las conexxiones http filtramos asi:
+# Si queremos saber todas las conexiones http filtramos asi:
 $ netstat | grep -c http | wc -l 
 
 # Para ver las conexiones activas en el puerto 80
@@ -426,6 +426,9 @@ Y nos muestra que puertos tenemos abiertos en la maquina donde hemos ejecutado e
 
 ## Ejercicio 6.3 
 ### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
+
+En [este blog](https://ciberseguridad.blog/25-tipos-de-ataques-informaticos-y-como-prevenirlos/) nos hacen un listado con 25 tipos de ataques a servidores y nos explican detalladamente como prevenirlos.
+
 
 
 ----------------------------------------------------------------------
