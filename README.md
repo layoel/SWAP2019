@@ -360,7 +360,7 @@ $ netstat | grep :80
 
 No pongo capturas de la instalación de wireshark porque ya lo tenia instalado en el equipo. 
 
-Lo que he hecho ha sido filtrar solo la tarjera wireless para capturar el tráfico wifi en la red de mi casa pero he aplicado un filtro para ver solo las peticiones http y este es el resultado obtenido.
+Lo que he hecho ha sido filtrar solo la tarjeta wireless para capturar el tráfico wifi en la red de mi casa pero he aplicado un filtro para ver solo las peticiones http y este es el resultado obtenido.
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/12.JPG)
 
