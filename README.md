@@ -391,6 +391,18 @@ elvira@:~m1$ sudo iptables -P FORWARD DROP
 
 ### Aplicar con iptables una política de permitir todo el tráfico en una de las máquinas de prácticas. Comprobar el funcionamiento.
 
+Para aceptar todo el tráfico, añadimos las siguientes reglas de iptables, antes debemos borrar las de bloquear todo:
+
+```bash
+elvira@:~m1$ iptables -F
+elvira@:~m1$ iptables -X
+elvira@:~m1$ iptables -Z
+elvira@:~m1$ iptables -t nat -F
+elvira@:~m1$ iptables −P INPUT ACCEPT
+elvira@:~m1$ iptables −P OUTPUT ACCEPT
+elvira@:~m1$ iptables −P FORWARD ACCEPT
+```
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/13.JPG)
 ## Ejercicio 6.2 
 ### Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
 
