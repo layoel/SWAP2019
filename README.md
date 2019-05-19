@@ -403,8 +403,26 @@ elvira@:~m1$ iptables −P OUTPUT ACCEPT
 elvira@:~m1$ iptables −P FORWARD ACCEPT
 ```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica4/imagenes/13.JPG)
+
 ## Ejercicio 6.2 
 ### Comprobar qué puertos tienen abiertos nuestras máquinas, su estado, y qué programa o demonio lo ocupa.
+
+Para comprobar los puertos que tiene abiertos nuestra máquina usaremos **nmap**. 
+
+Instalamos nmap:
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/13.JPG)
+
+ejecutamos el comando siguiente:
+
+```BASH
+elvira@:~m1$ sudo nmap -sT -O localhost
+```
+
+Y nos muestra que puertos tenemos abiertos en la maquina donde hemos ejecutado el comando.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/14.JPG)
+
 
 ## Ejercicio 6.3 
 ### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
