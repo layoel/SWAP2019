@@ -317,8 +317,43 @@ Para implemenar un GSLB necesitamos tener nuestro centro de datos replicado en d
 
 ### Buscar información sobre cómo calcular el número de conexiones por segundo.
 
+Nginx nos da la posibilidad de realizar estadísticas que incluyen las conexiones de la máquina.Solo hay que añadir al fichero de configuración lo siguiente:
 
+```BASH
+location /nginx_status {
+	# Para activar las estadísticas
+	stub_status on;
+	access_log   off;
 
+	allow 192.168.80.133;
+	deny all;
+}
+
+```
+
+Para que se aplique, debemos reiniciar el servicio, como ocurre con cualquier cambio que hagamos sobre el fichero de configuración de nginx.
+
+```bash
+elvira@LB:~$ sudo service nginx restart
+```
+
+Para poder acceder a las estadísticas de nuestro sitio web, en el navegador debemos poner la ip de nuestro sitio y acontinuacion **nginx_status**
+```bash
+http://192.168.80.133/nginx_status
+```
+
+Para los servidores web que no usan nginx se puede hacer con el comando netstat y filtrando con grep. Por ejemplo:
+
+```bash
+#vemos todas las coneziones activas al servidor web
+$ netstat -na
+
+# Si queremos saber todas las conexxiones http filtramos asi:
+$ netstat | grep -c http | wc -l 
+
+# Para ver las conexiones activas en el puerto 80
+$ netstat | grep :80
+```
 ## Ejercicio 5.2
 
 ### Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP… o en la red de casa
@@ -343,6 +378,8 @@ Para implemenar un GSLB necesitamos tener nuestro centro de datos replicado en d
 
 ## Ejercicio 6.3 
 ### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
+
+
 ----------------------------------------------------------------------
 # Tema7
 
