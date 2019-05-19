@@ -358,6 +358,12 @@ $ netstat | grep :80
 
 ### Revisar los análisis de tráfico que se ofrecen en: http://bit.ly/1g0dkKj Instalar wireshark y observar cómo fluye el tráfico de red en uno de los servidores web mientras se le hacen peticiones HTTP… o en la red de casa
 
+No pongo capturas de la instalación de wireshark porque ya lo tenia instalado en el equipo. 
+
+Lo que he hecho ha sido filtrar solo la tarjera wireless para capturar el tráfico wifi en la red de mi casa pero he aplicado un filtro para ver solo las peticiones http y este es el resultado obtenido.
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/GranjaWebDocker/imagenes/12.JPG)
+
 ## Ejercicio 5.3 
 
 ### Buscar información sobre características, funcionalidad, disponibilidad para diversos SO, etc de herramientas para monitorizar las prestaciones de un servidor.
