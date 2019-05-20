@@ -457,4 +457,7 @@ Estos ataques se pueden prevenir de la siguiente manera:
 
 ## Ejercicio 7.1 
 ### Buscar información sobre los sistemas de ficheros en red más utilizados en la actualidad y comparar sus características. Hacer una lista de ventajas e inconvenientes de todos ellos, así como grandes sistemas en los que se utilicen.
+
+Para este ejercicio la información la he sacado de [esta web](https://elpuig.xeill.net/Members/vcarceler/c1/didactica/apuntes/ud4/na6)
+
 ----------------------------------------------------------------------
