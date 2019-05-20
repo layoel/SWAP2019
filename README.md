@@ -460,4 +460,6 @@ Estos ataques se pueden prevenir de la siguiente manera:
 
 Para este ejercicio la información la he sacado de [esta web](https://elpuig.xeill.net/Members/vcarceler/c1/didactica/apuntes/ud4/na6)
 
+
+![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/15.JPG)
 ----------------------------------------------------------------------
