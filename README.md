@@ -427,9 +427,30 @@ Y nos muestra que puertos tenemos abiertos en la maquina donde hemos ejecutado e
 ## Ejercicio 6.3 
 ### Buscar información acerca de los tipos de ataques más comunes en servidores web (p.ej. secuestros de sesión). Detallar en qué consisten, y cómo se pueden evitar.
 
-En [este blog](https://ciberseguridad.blog/25-tipos-de-ataques-informaticos-y-como-prevenirlos/) nos hacen un listado con 25 tipos de ataques a servidores y nos explican detalladamente como prevenirlos.
+En [este blog](https://ciberseguridad.blog/25-tipos-de-ataques-informaticos-y-como-prevenirlos/) nos hacen un listado con 25 tipos de ataques a servidores y nos explican detalladamente como prevenirlos, de él he sacado la información para resolver este ejercicio.
 
+- **Ataque DDoS**: es el ataque distribuido de denegación de servicio. Se basa en evitar que los usuarios accedan a la información o servicios que proporciona un servidor. Este ataque aprovecha que el servidor solo puede procesar  una cierta cantidad de solicitudes de una vez, el atacante manda más solicitudes de las que el servidor puede servir y hace que el servicio quede no dispoible por sobrecarga del servidor y los usuarios no puedan acceder. [Aqui](https://www.youtube.com/watch?v=DUNRnuPHtYM) podemos ver una explicación de un ejemplo de ataque DoS. Para poder evitar ese tipo de ataques tenemos varias opciones:
+	- Aplicación de filtrado de enrutador.
+	- Bloquear direcciones IP sin usar.
+	- Permitir el acceso a la red solo al tráfico deseado.
+	- Deshabilitar servicios de red innecesarios.
+	- Actualización de antivirus regularmente.
+	- Tener una muy buena política de contraseñas.
+	- Limitar la cantidad de ancho de banda de la red.
+	- Uso de la red de filtrado de acceso.
+- **Inyección SQL**: Este ataque ayuda al atacante a ejecutar un código por la existencia de una vulnerabilidad en la capa de la base de datos de la aplicación. Éste código podra obtener datos confidenciales o comprometer la aplicación en si.
+- **Cross-Site Request**: falsificación de solicitudes entre sitios, también conocida como ataque con un solo clic o sesión y abreviado como CSRF ("sea-surf") o XSRF, es un tipo de exploit malicioso de un sitio web mediante el cual se transmiten comandos no autorizados de un usuario en el que el sitio web confía.
+- **Ataque de envenenamiento de cookies**: implican la modificación de los contenidos de una cookie para eludir los mecanismos de seguridad. Al usar ataques de envenenamiento de cookies, los atacantes pueden obtener información no autorizada sobre otro usuario y robar su identidad.
+- **Robo de cookies**: realizan mediante scripts del lado del cliente como JavaScript. Cuando el usuario hace clic en un enlace, el script buscará la cookie almacenada en la memoria de la computadora para todas las cookies activas y las enviará (al parecer, los correos electrónicos) al atacante.
+- **Ataques de phishing**: intentar adquirir información sensible como nombres de usuario, contraseñas y detalles de tarjetas de crédito haciéndose pasar por una entidad confiable en una comunicación electrónica.
+- **Web Defacement**: La desfiguración del sitio web es un ataque a un sitio web que cambia la apariencia visual del sitio. Estos son típicamente el trabajo de los crackers del sistema, que entran en un servidor web y reemplazan el sitio web alojado con uno propio. Lo más probable es que este tipo de ataques se hagan intencionalmente para arruinar la reputación de la compañía que ha alojado este sitio web.
+- **División de respuesta HTTP**: Un atacante pasa datos maliciosos a una aplicación vulnerable, y la aplicación incluye los datos en un encabezado de respuesta HTTP. Este ataque en sí no causa ningún daño, pero daría lugar a otros ataques sensibles como XSS.
+- **Defectos de inyección**: permiten a los atacantes retransmitir código malicioso a través de una aplicación web a otro sistema. Estos ataques incluyen llamadas al sistema operativo a través de llamadas al sistema, el uso de programas externos a través de comandos del shell, así como llamadas a bases de datos de backend a través de SQL (es decir, inyección de SQL). Los scripts completos escritos en Perl, Python y otros lenguajes pueden ser inyectados en aplicaciones web mal diseñadas y ejecutado. Cada vez que una aplicación web utiliza un intérprete de cualquier tipo, existe el peligro de un ataque de inyección. 
 
+Estos ataques se pueden prevenir de la siguiente manera:
+- Usar procedimientos almacenados con parámetros que se parametrizan automáticamente.
+- Implementando CAPTCHA o incitando a los usuarios a responder preguntas. Esto asegura que un formulario y una solicitud sean enviados por un humano y no por un bot.
+- Y lo mas importante, utilizar un cortafuegos de aplicación web (WAF) para supervisar la red y bloquear posibles ataques.
 
 ----------------------------------------------------------------------
 # Tema7
