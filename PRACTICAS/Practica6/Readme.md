@@ -20,6 +20,10 @@ Una vez instalado crearemos la carpeta que contendrá los archivos compartidos.
 
 Para que pueda acceder a la carpeta compartida cualquier usuario tenemos que editar el dueño y los permisos de esa carpeta:
 
+```bash
+elvira@m1:~$ sudo chown nobody:nogroup /dat/compartida/
+elvira@m1:~$ sudo chmod -R 777 /dat/compartida/
+```
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica6/imagenes/2.JPG)
 
 
@@ -31,26 +35,4 @@ Para que pueda acceder a la carpeta compartida cualquier usuario tenemos que edi
 
 ```
 
-
-
-
-## Replicar una BD MySQL con mysqldump
-
-
-
-
-
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/2.JPG)
-
-
-
-## Replicación mediante configuración maestro-esclavo
-
-
-```BASH
-
-```
-
-
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica5/imagenes/8.JPG)
-
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica6/imagenes/2.JPG)
