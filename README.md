@@ -460,6 +460,25 @@ Estos ataques se pueden prevenir de la siguiente manera:
 
 Para este ejercicio la información la he sacado de [esta web](https://elpuig.xeill.net/Members/vcarceler/c1/didactica/apuntes/ud4/na6)
 
+Algunos de los sistemas de archivos en red más usados son:
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/imagenes-ejercicios/15.JPG)
+
+- **NFS  - Network File System**: permite que un servidor exporte un sistema de ficheros, y uno o varios clientes, lo monten para utilizarlo como un sistema de ficheros local. La comunicación entre el servidor y el cliente se realiza a través de la red, utilizando el protocolo NFS. El sistema de ficheros de disco que utiliza físicamente el servidor es irrelevante para el cliente.
+- **SMB/CIFS - Server Message Block/Common Internet File System**:El protocolo SMB fue diseñado originalmente por IBM, pero actualmente la versión más extendida del mismo es la implementada por Microsoft en sus sistemas operativos, hoy en día denominada CIFS. En Unix existe el servicio Samba que implementa un servidor y cliente para SMB/CIFS. Entre las características del protocolo encontramos:
+	- Permite compartir sistemas de archivos e impresoras
+	- Tradicionalmente ha utilizado NetBIOS/NetBEUI aunque las versiones nuevas pueden funcionar encima de TCP/IP. Cuando no se utiliza TCP/IP no existe posibilidad de enrutado, de manera que cliente y servidor deben estar en la misma red
+	- El servicio permite explorar la red para descubrir máquinas y recursos compartidos
+	- Tradicionalmente se ha utilizado una resolución de nombres WINS, aunque en las versiones nuevas (a partir de Windows 2000) se ha relegado en favor de DNS y Active Directory
+- **[CODA](https://es.wikipedia.org/wiki/Coda_%28sistema_de_archivos%29)**: Coda es un sistema de archivos distribuido, desciende directamente de una antigua versión de AFS (AFS-2) y ofrece muchas características similares. Tiene múltiples características que son deseables en la mayoría de sistemas de archivos. Además, tiene algunas características propias.
+	- Puede funcionar sin conexión
+	- Es software libre
+	- Gran rendimiento gracias a la caché persistente en el cliente
+	- Replicado de servidores
+	- Modelo de seguridad para autenticación, cifrado y control de acceso
+	- Funcionamiento continuado durante fallos de red
+	- Ajuste del ancho de banda de red
+	- Escala bien
+- **[InterMezzo](https://es.wikipedia.org/wiki/InterMezzo)**: InterMezzo es un sistema de archivos distribuido para Linux, distribuido bajo la licencia GPL. Está diseñado para trabajar encima de un sistema de archivos con registro como ext3, JFS, ReiserFS y XFS.  Consiste en un servidor, que mantiene la copia maestra del sistema de archivos, y uno o más clientes con una caché del sistema de archivos. Puede trabajar en el modo de replicación, en el que un cliente mantiene un duplicado completo del sistema de archivos, o en el modo bajo demanda en el que el cliente sólo solicita los ficheros que necesita. Lo que se logra al capturar todas las escrituras al sistema de archivos con registro del servidor difundiéndolas a los clientes para que las reproduzcan.
+
 ----------------------------------------------------------------------
