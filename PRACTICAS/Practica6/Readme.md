@@ -80,4 +80,4 @@ elvira@m2~$ sudo mount 192.168.80.131:/dat/compartida cltem2
 ```
 Para comprobar que funciona la carpeta compartida entre los 3 servidores, en m2 he creado un nuevo directorio dentro de la carpeta compartida y un nuevo fichero de texto y vemos que en m3 aparece replicado
 
-![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica6/imagenes/7.JPG)
+![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica6/imagenes/8.JPG)
