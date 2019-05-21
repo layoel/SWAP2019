@@ -81,3 +81,55 @@ elvira@m2~$ sudo mount 192.168.80.131:/dat/compartida cltem2
 Para comprobar que funciona la carpeta compartida entre los 3 servidores, en m2 he creado un nuevo directorio dentro de la carpeta compartida y un nuevo fichero de texto y vemos que en m3 aparece replicado
 
 ![imagen](https://github.com/layoel/SWAP2019/blob/master/PRACTICAS/Practica6/imagenes/8.JPG)
+
+
+Una vez hemos comprobado que funcinona correctamente incluiremos la siguiente al fichero fstab para que se monte la carpeta al inicio cuando reiniciamos la máquina y el usuario no tenga que hacer nada para poder usar los recursos compartidos en esa carpeta.
+
+```bash
+elvira@m2~$ sudo nano /etc/fstab
+
+192.168.80.131:/dat/compartida cltem2 nfs auto, noatime, nolock, bg, nfsrvers=3, intr, tcp, actimeo=1800 0 0
+```
+
+actimeo=n      Using actimeo sets all of acregmin, acregmax, acdirmin, and  acdirmax  to  the
+                      same value.  If this option is not specified, the NFS client uses the defaults
+                      for each of these options listed above.
+
+bg / fg        Determines how the mount(8) command behaves if an attempt to mount  an  export
+                      fails.  The fg option causes mount(8) to exit with an error status if any part
+                      of the mount request times out or fails outright.  This  is  called  a  "fore‐
+                      ground"  mount,  and  is  the  default behavior if neither the fg nor bg mount
+                      option is specified.
+
+                      If the bg option is specified, a timeout or failure causes the  mount(8)  com‐
+                      mand to fork a child which continues to attempt to mount the export.  The par‐
+                      ent immediately returns with a zero exit code.  This  is  known  as  a  "back‐
+                      ground" mount.
+
+                      If the local mount point directory is missing, the mount(8) command acts as if
+                      the mount request timed out.  This permits  nested  NFS  mounts  specified  in
+                      /etc/fstab  to proceed in any order during system initialization, even if some
+                      NFS servers  are  not  yet  available.   Alternatively  these  issues  can  be
+                      addressed using an automounter (refer to automount(8) for details).
+
+tcp            The tcp option is an alternative to specifying proto=tcp.  It is included  for
+                      compatibility with other operating systems.
+
+intr / nointr  Selects  whether  to  allow signals to interrupt file operations on this mount
+                      point. If neither option is specified (or if nointr is specified), signals  do
+                      not  interrupt  NFS file operations. If intr is specified, system calls return
+                      EINTR if an in-progress NFS operation is interrupted by a signal.
+
+                      Using the intr option is preferred to using the soft option because it is sig‐
+                      nificantly less likely to result in data corruption.
+
+                      The  intr  /  nointr  mount  option  is  deprecated after kernel 2.6.25.  Only
+                      SIGKILL can interrupt a pending NFS operation on these kernels, and if  speci‐
+                      fied,  this  mount  option  is ignored to provide backwards compatibility with
+                      older kernels.
+
+nfsvers=n      The NFS protocol version number used to contact the server's NFS service.   If
+                      the  server  does  not support the requested version, the mount request fails.
+                      If this option is not specified, the client negotiates a suitable version with
+                      the server, trying version 4 first, version 3 second, and version 2 last.
+
